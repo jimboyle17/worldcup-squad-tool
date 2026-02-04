@@ -1,0 +1,8 @@
+{
+    "app_name": "World Cup 2026 Squad Assessment Tool",
+    "cache_expiry_hours": 24,
+    "scrape_delay_seconds": 2,
+    "transfermarkt_base_url": "https://www.transfermarkt.com",
+    "window_width": 1280,
+    "window_height": 800
+}

@@ -1,0 +1,1049 @@
+{
+    "managers": [
+        {
+            "team_name": "Argentina",
+            "name": "Lionel Scaloni",
+            "nationality": "Argentine",
+            "date_of_birth": "1978-05-16",
+            "tenure_start": "2018-11-15",
+            "fifa_ranking_at_appointment": 11,
+            "career_history": [
+                {"team": "Argentina U20", "role": "Assistant Coach", "start_year": 2017, "end_year": 2018, "level": "youth"},
+                {"team": "Argentina", "role": "Head Coach", "start_year": 2018, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "FIFA World Cup", "year": 2022, "level": "world_cup", "with_team": "Argentina"},
+                {"title": "Copa America", "year": 2021, "level": "continental", "with_team": "Argentina"},
+                {"title": "Copa America", "year": 2024, "level": "continental", "with_team": "Argentina"},
+                {"title": "Finalissima", "year": 2022, "level": "cup", "with_team": "Argentina"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Winner", "year": 2022},
+                {"tournament": "2024 Copa America", "result": "Winner", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "France",
+            "name": "Didier Deschamps",
+            "nationality": "French",
+            "date_of_birth": "1968-10-15",
+            "tenure_start": "2012-07-08",
+            "fifa_ranking_at_appointment": 17,
+            "career_history": [
+                {"team": "Monaco", "role": "Head Coach", "start_year": 2001, "end_year": 2005, "level": "club_top"},
+                {"team": "Juventus", "role": "Head Coach", "start_year": 2006, "end_year": 2007, "level": "club_top"},
+                {"team": "Marseille", "role": "Head Coach", "start_year": 2009, "end_year": 2012, "level": "club_top"},
+                {"team": "France", "role": "Head Coach", "start_year": 2012, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "FIFA World Cup", "year": 2018, "level": "world_cup", "with_team": "France"},
+                {"title": "UEFA Nations League", "year": 2021, "level": "continental", "with_team": "France"},
+                {"title": "Ligue 1", "year": 2010, "level": "league", "with_team": "Marseille"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Runner-up", "year": 2022},
+                {"tournament": "Euro 2024", "result": "Semi-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Spain",
+            "name": "Luis de la Fuente",
+            "nationality": "Spanish",
+            "date_of_birth": "1961-08-22",
+            "tenure_start": "2022-12-12",
+            "fifa_ranking_at_appointment": 7,
+            "career_history": [
+                {"team": "Athletic Bilbao B", "role": "Head Coach", "start_year": 2012, "end_year": 2013, "level": "club_lower"},
+                {"team": "Spain U19", "role": "Head Coach", "start_year": 2013, "end_year": 2018, "level": "youth"},
+                {"team": "Spain U21", "role": "Head Coach", "start_year": 2018, "end_year": 2022, "level": "youth"},
+                {"team": "Spain", "role": "Head Coach", "start_year": 2022, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "UEFA European Championship", "year": 2024, "level": "continental", "with_team": "Spain"},
+                {"title": "UEFA U21 Championship", "year": 2019, "level": "cup", "with_team": "Spain U21"},
+                {"title": "UEFA U19 Championship", "year": 2015, "level": "cup", "with_team": "Spain U19"},
+                {"title": "UEFA Nations League", "year": 2023, "level": "continental", "with_team": "Spain"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Winner", "year": 2024},
+                {"tournament": "2023 UEFA Nations League", "result": "Winner", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "England",
+            "name": "Thomas Tuchel",
+            "nationality": "German",
+            "date_of_birth": "1973-08-29",
+            "tenure_start": "2025-01-01",
+            "fifa_ranking_at_appointment": 4,
+            "career_history": [
+                {"team": "Mainz 05", "role": "Head Coach", "start_year": 2009, "end_year": 2014, "level": "club_mid"},
+                {"team": "Borussia Dortmund", "role": "Head Coach", "start_year": 2015, "end_year": 2017, "level": "club_top"},
+                {"team": "Paris Saint-Germain", "role": "Head Coach", "start_year": 2018, "end_year": 2020, "level": "club_top"},
+                {"team": "Chelsea", "role": "Head Coach", "start_year": 2021, "end_year": 2022, "level": "club_top"},
+                {"team": "Bayern Munich", "role": "Head Coach", "start_year": 2023, "end_year": 2024, "level": "club_top"},
+                {"team": "England", "role": "Head Coach", "start_year": 2025, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "UEFA Champions League", "year": 2021, "level": "champions_league", "with_team": "Chelsea"},
+                {"title": "FIFA Club World Cup", "year": 2022, "level": "cup", "with_team": "Chelsea"},
+                {"title": "UEFA Super Cup", "year": 2021, "level": "cup", "with_team": "Chelsea"},
+                {"title": "DFB-Pokal", "year": 2017, "level": "cup", "with_team": "Borussia Dortmund"},
+                {"title": "Ligue 1", "year": 2019, "level": "league", "with_team": "Paris Saint-Germain"}
+            ],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Brazil",
+            "name": "Dorival Junior",
+            "nationality": "Brazilian",
+            "date_of_birth": "1962-04-03",
+            "tenure_start": "2024-01-10",
+            "fifa_ranking_at_appointment": 5,
+            "career_history": [
+                {"team": "Various Brazilian clubs", "role": "Head Coach", "start_year": 1998, "end_year": 2020, "level": "club_mid"},
+                {"team": "Flamengo", "role": "Head Coach", "start_year": 2022, "end_year": 2022, "level": "club_top"},
+                {"team": "Sao Paulo", "role": "Head Coach", "start_year": 2023, "end_year": 2023, "level": "club_top"},
+                {"team": "Brazil", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Copa Libertadores", "year": 2022, "level": "continental", "with_team": "Flamengo"},
+                {"title": "Copa do Brasil", "year": 2022, "level": "cup", "with_team": "Flamengo"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Quarter-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Portugal",
+            "name": "Roberto Martinez",
+            "nationality": "Spanish",
+            "date_of_birth": "1973-07-13",
+            "tenure_start": "2023-01-09",
+            "fifa_ranking_at_appointment": 9,
+            "career_history": [
+                {"team": "Swansea City", "role": "Head Coach", "start_year": 2007, "end_year": 2009, "level": "club_mid"},
+                {"team": "Wigan Athletic", "role": "Head Coach", "start_year": 2009, "end_year": 2013, "level": "club_mid"},
+                {"team": "Everton", "role": "Head Coach", "start_year": 2013, "end_year": 2016, "level": "club_top"},
+                {"team": "Belgium", "role": "Head Coach", "start_year": 2016, "end_year": 2022, "level": "international_senior"},
+                {"team": "Portugal", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "FA Cup", "year": 2013, "level": "cup", "with_team": "Wigan Athletic"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Quarter-finals", "year": 2024},
+                {"tournament": "2022 FIFA World Cup", "result": "Group Stage", "year": 2022}
+            ]
+        },
+        {
+            "team_name": "Netherlands",
+            "name": "Ronald Koeman",
+            "nationality": "Dutch",
+            "date_of_birth": "1963-03-21",
+            "tenure_start": "2023-01-10",
+            "fifa_ranking_at_appointment": 8,
+            "career_history": [
+                {"team": "Vitesse", "role": "Head Coach", "start_year": 2000, "end_year": 2001, "level": "club_mid"},
+                {"team": "Ajax", "role": "Head Coach", "start_year": 2001, "end_year": 2005, "level": "club_top"},
+                {"team": "Benfica", "role": "Head Coach", "start_year": 2005, "end_year": 2006, "level": "club_top"},
+                {"team": "PSV", "role": "Head Coach", "start_year": 2006, "end_year": 2007, "level": "club_top"},
+                {"team": "Valencia", "role": "Head Coach", "start_year": 2007, "end_year": 2008, "level": "club_top"},
+                {"team": "Feyenoord", "role": "Head Coach", "start_year": 2011, "end_year": 2014, "level": "club_top"},
+                {"team": "Southampton", "role": "Head Coach", "start_year": 2014, "end_year": 2016, "level": "club_mid"},
+                {"team": "Everton", "role": "Head Coach", "start_year": 2016, "end_year": 2018, "level": "club_top"},
+                {"team": "Netherlands", "role": "Head Coach", "start_year": 2018, "end_year": 2020, "level": "international_senior"},
+                {"team": "Barcelona", "role": "Head Coach", "start_year": 2020, "end_year": 2021, "level": "club_top"},
+                {"team": "Netherlands", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Eredivisie", "year": 2003, "level": "league", "with_team": "Ajax"},
+                {"title": "KNVB Cup", "year": 2002, "level": "cup", "with_team": "Ajax"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Semi-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Belgium",
+            "name": "Domenico Tedesco",
+            "nationality": "Italian-German",
+            "date_of_birth": "1985-09-12",
+            "tenure_start": "2023-02-06",
+            "fifa_ranking_at_appointment": 4,
+            "career_history": [
+                {"team": "Schalke 04", "role": "Head Coach", "start_year": 2017, "end_year": 2019, "level": "club_top"},
+                {"team": "Spartak Moscow", "role": "Head Coach", "start_year": 2019, "end_year": 2020, "level": "club_mid"},
+                {"team": "RB Leipzig", "role": "Head Coach", "start_year": 2022, "end_year": 2023, "level": "club_top"},
+                {"team": "Belgium", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Round of 16", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Italy",
+            "name": "Luciano Spalletti",
+            "nationality": "Italian",
+            "date_of_birth": "1959-03-07",
+            "tenure_start": "2023-09-01",
+            "fifa_ranking_at_appointment": 9,
+            "career_history": [
+                {"team": "Empoli", "role": "Head Coach", "start_year": 1993, "end_year": 1998, "level": "club_mid"},
+                {"team": "Sampdoria", "role": "Head Coach", "start_year": 1998, "end_year": 1999, "level": "club_mid"},
+                {"team": "Venezia", "role": "Head Coach", "start_year": 1999, "end_year": 2001, "level": "club_lower"},
+                {"team": "Udinese", "role": "Head Coach", "start_year": 2001, "end_year": 2005, "level": "club_mid"},
+                {"team": "Roma", "role": "Head Coach", "start_year": 2005, "end_year": 2009, "level": "club_top"},
+                {"team": "Zenit", "role": "Head Coach", "start_year": 2009, "end_year": 2014, "level": "club_mid"},
+                {"team": "Roma", "role": "Head Coach", "start_year": 2016, "end_year": 2017, "level": "club_top"},
+                {"team": "Inter Milan", "role": "Head Coach", "start_year": 2017, "end_year": 2019, "level": "club_top"},
+                {"team": "Napoli", "role": "Head Coach", "start_year": 2021, "end_year": 2023, "level": "club_top"},
+                {"team": "Italy", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Serie A", "year": 2023, "level": "league", "with_team": "Napoli"},
+                {"title": "Russian Premier League", "year": 2010, "level": "league", "with_team": "Zenit"},
+                {"title": "Coppa Italia", "year": 2007, "level": "cup", "with_team": "Roma"},
+                {"title": "Coppa Italia", "year": 2008, "level": "cup", "with_team": "Roma"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Round of 16", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Germany",
+            "name": "Julian Nagelsmann",
+            "nationality": "German",
+            "date_of_birth": "1987-07-23",
+            "tenure_start": "2023-09-22",
+            "fifa_ranking_at_appointment": 15,
+            "career_history": [
+                {"team": "Hoffenheim", "role": "Head Coach", "start_year": 2016, "end_year": 2019, "level": "club_mid"},
+                {"team": "RB Leipzig", "role": "Head Coach", "start_year": 2019, "end_year": 2021, "level": "club_top"},
+                {"team": "Bayern Munich", "role": "Head Coach", "start_year": 2021, "end_year": 2023, "level": "club_top"},
+                {"team": "Germany", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Bundesliga", "year": 2022, "level": "league", "with_team": "Bayern Munich"},
+                {"title": "DFL-Supercup", "year": 2022, "level": "cup", "with_team": "Bayern Munich"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Quarter-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Uruguay",
+            "name": "Marcelo Bielsa",
+            "nationality": "Argentine",
+            "date_of_birth": "1955-07-21",
+            "tenure_start": "2023-05-16",
+            "fifa_ranking_at_appointment": 16,
+            "career_history": [
+                {"team": "Newell's Old Boys", "role": "Head Coach", "start_year": 1990, "end_year": 1992, "level": "club_mid"},
+                {"team": "Atlas", "role": "Head Coach", "start_year": 1992, "end_year": 1993, "level": "club_mid"},
+                {"team": "America", "role": "Head Coach", "start_year": 1993, "end_year": 1994, "level": "club_mid"},
+                {"team": "Velez Sarsfield", "role": "Head Coach", "start_year": 1997, "end_year": 1998, "level": "club_mid"},
+                {"team": "Espanyol", "role": "Head Coach", "start_year": 1998, "end_year": 1999, "level": "club_mid"},
+                {"team": "Argentina", "role": "Head Coach", "start_year": 1998, "end_year": 2004, "level": "international_senior"},
+                {"team": "Chile", "role": "Head Coach", "start_year": 2007, "end_year": 2011, "level": "international_senior"},
+                {"team": "Athletic Bilbao", "role": "Head Coach", "start_year": 2011, "end_year": 2013, "level": "club_top"},
+                {"team": "Marseille", "role": "Head Coach", "start_year": 2014, "end_year": 2015, "level": "club_top"},
+                {"team": "Lazio", "role": "Head Coach", "start_year": 2016, "end_year": 2016, "level": "club_top"},
+                {"team": "Lille", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_top"},
+                {"team": "Leeds United", "role": "Head Coach", "start_year": 2018, "end_year": 2023, "level": "club_mid"},
+                {"team": "Uruguay", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Argentine Primera Division", "year": 1991, "level": "league", "with_team": "Newell's Old Boys"},
+                {"title": "Argentine Primera Division", "year": 1998, "level": "league", "with_team": "Velez Sarsfield"},
+                {"title": "Olympic Gold Medal", "year": 2004, "level": "continental", "with_team": "Argentina"},
+                {"title": "EFL Championship", "year": 2020, "level": "league", "with_team": "Leeds United"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Semi-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Colombia",
+            "name": "Nestor Lorenzo",
+            "nationality": "Argentine",
+            "date_of_birth": "1966-01-26",
+            "tenure_start": "2022-06-14",
+            "fifa_ranking_at_appointment": 17,
+            "career_history": [
+                {"team": "Deportivo Cali", "role": "Head Coach", "start_year": 2006, "end_year": 2007, "level": "club_mid"},
+                {"team": "Colombia", "role": "Assistant Coach", "start_year": 2012, "end_year": 2018, "level": "international_senior"},
+                {"team": "Melgar", "role": "Head Coach", "start_year": 2019, "end_year": 2020, "level": "club_lower"},
+                {"team": "Colombia", "role": "Head Coach", "start_year": 2022, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Runner-up", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Croatia",
+            "name": "Zlatko Dalic",
+            "nationality": "Croatian",
+            "date_of_birth": "1966-10-26",
+            "tenure_start": "2017-10-07",
+            "fifa_ranking_at_appointment": 18,
+            "career_history": [
+                {"team": "Varteks", "role": "Head Coach", "start_year": 2005, "end_year": 2008, "level": "club_lower"},
+                {"team": "Slaven Belupo", "role": "Head Coach", "start_year": 2008, "end_year": 2011, "level": "club_lower"},
+                {"team": "Dinamo Zagreb", "role": "Head Coach", "start_year": 2011, "end_year": 2012, "level": "club_mid"},
+                {"team": "Al-Ain", "role": "Head Coach", "start_year": 2014, "end_year": 2017, "level": "club_mid"},
+                {"team": "Al-Hilal", "role": "Head Coach", "start_year": 2017, "end_year": 2017, "level": "club_mid"},
+                {"team": "Croatia", "role": "Head Coach", "start_year": 2017, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "UAE Pro League", "year": 2015, "level": "league", "with_team": "Al-Ain"},
+                {"title": "UAE Pro League", "year": 2016, "level": "league", "with_team": "Al-Ain"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Third place", "year": 2022},
+                {"tournament": "2023 UEFA Nations League", "result": "Runner-up", "year": 2023},
+                {"tournament": "Euro 2024", "result": "Group Stage", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Japan",
+            "name": "Hajime Moriyasu",
+            "nationality": "Japanese",
+            "date_of_birth": "1968-08-23",
+            "tenure_start": "2018-07-26",
+            "fifa_ranking_at_appointment": 55,
+            "career_history": [
+                {"team": "Sanfrecce Hiroshima", "role": "Head Coach", "start_year": 2012, "end_year": 2017, "level": "club_mid"},
+                {"team": "Japan U21", "role": "Head Coach", "start_year": 2017, "end_year": 2021, "level": "youth"},
+                {"team": "Japan", "role": "Head Coach", "start_year": 2018, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "J1 League", "year": 2012, "level": "league", "with_team": "Sanfrecce Hiroshima"},
+                {"title": "J1 League", "year": 2013, "level": "league", "with_team": "Sanfrecce Hiroshima"},
+                {"title": "J1 League", "year": 2015, "level": "league", "with_team": "Sanfrecce Hiroshima"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Round of 16", "year": 2022},
+                {"tournament": "2023 AFC Asian Cup", "result": "Quarter-finals", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Morocco",
+            "name": "Walid Regragui",
+            "nationality": "Moroccan-French",
+            "date_of_birth": "1975-09-23",
+            "tenure_start": "2022-08-31",
+            "fifa_ranking_at_appointment": 22,
+            "career_history": [
+                {"team": "FUS Rabat", "role": "Head Coach", "start_year": 2014, "end_year": 2018, "level": "club_lower"},
+                {"team": "Al Duhail", "role": "Head Coach", "start_year": 2020, "end_year": 2021, "level": "club_mid"},
+                {"team": "Wydad Casablanca", "role": "Head Coach", "start_year": 2021, "end_year": 2022, "level": "club_mid"},
+                {"team": "Morocco", "role": "Head Coach", "start_year": 2022, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "CAF Champions League", "year": 2022, "level": "continental", "with_team": "Wydad Casablanca"},
+                {"title": "Botola Pro", "year": 2021, "level": "league", "with_team": "Wydad Casablanca"},
+                {"title": "Qatar Stars League", "year": 2020, "level": "league", "with_team": "Al Duhail"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Semi-finals", "year": 2022},
+                {"tournament": "2023 AFCON", "result": "Round of 16", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "USA",
+            "name": "Mauricio Pochettino",
+            "nationality": "Argentine",
+            "date_of_birth": "1972-03-02",
+            "tenure_start": "2024-09-10",
+            "fifa_ranking_at_appointment": 16,
+            "career_history": [
+                {"team": "Espanyol", "role": "Head Coach", "start_year": 2009, "end_year": 2012, "level": "club_mid"},
+                {"team": "Southampton", "role": "Head Coach", "start_year": 2013, "end_year": 2014, "level": "club_mid"},
+                {"team": "Tottenham Hotspur", "role": "Head Coach", "start_year": 2014, "end_year": 2019, "level": "club_top"},
+                {"team": "Paris Saint-Germain", "role": "Head Coach", "start_year": 2021, "end_year": 2022, "level": "club_top"},
+                {"team": "Chelsea", "role": "Head Coach", "start_year": 2023, "end_year": 2024, "level": "club_top"},
+                {"team": "USA", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Ligue 1", "year": 2022, "level": "league", "with_team": "Paris Saint-Germain"}
+            ],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Mexico",
+            "name": "Javier Aguirre",
+            "nationality": "Mexican",
+            "date_of_birth": "1958-12-01",
+            "tenure_start": "2024-08-01",
+            "fifa_ranking_at_appointment": 15,
+            "career_history": [
+                {"team": "Atlante", "role": "Head Coach", "start_year": 1995, "end_year": 1996, "level": "club_mid"},
+                {"team": "Pachuca", "role": "Head Coach", "start_year": 1996, "end_year": 2001, "level": "club_mid"},
+                {"team": "Mexico", "role": "Head Coach", "start_year": 2001, "end_year": 2002, "level": "international_senior"},
+                {"team": "Osasuna", "role": "Head Coach", "start_year": 2002, "end_year": 2006, "level": "club_mid"},
+                {"team": "Atletico Madrid", "role": "Head Coach", "start_year": 2006, "end_year": 2006, "level": "club_top"},
+                {"team": "Mexico", "role": "Head Coach", "start_year": 2009, "end_year": 2010, "level": "international_senior"},
+                {"team": "Zaragoza", "role": "Head Coach", "start_year": 2010, "end_year": 2011, "level": "club_mid"},
+                {"team": "Espanyol", "role": "Head Coach", "start_year": 2012, "end_year": 2014, "level": "club_mid"},
+                {"team": "Japan", "role": "Head Coach", "start_year": 2014, "end_year": 2015, "level": "international_senior"},
+                {"team": "Al-Wahda", "role": "Head Coach", "start_year": 2015, "end_year": 2016, "level": "club_lower"},
+                {"team": "Egypt", "role": "Head Coach", "start_year": 2018, "end_year": 2019, "level": "international_senior"},
+                {"team": "Leganes", "role": "Head Coach", "start_year": 2019, "end_year": 2020, "level": "club_lower"},
+                {"team": "Monterrey", "role": "Head Coach", "start_year": 2020, "end_year": 2022, "level": "club_mid"},
+                {"team": "Mallorca", "role": "Head Coach", "start_year": 2022, "end_year": 2024, "level": "club_mid"},
+                {"team": "Mexico", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Liga MX", "year": 1999, "level": "league", "with_team": "Pachuca"},
+                {"title": "Liga MX", "year": 2001, "level": "league", "with_team": "Pachuca"},
+                {"title": "CONCACAF Champions Cup", "year": 2002, "level": "continental", "with_team": "Pachuca"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Group Stage", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Senegal",
+            "name": "Aliou Cisse",
+            "nationality": "Senegalese",
+            "date_of_birth": "1976-03-24",
+            "tenure_start": "2015-03-04",
+            "fifa_ranking_at_appointment": 39,
+            "career_history": [
+                {"team": "Senegal", "role": "Head Coach", "start_year": 2015, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Africa Cup of Nations", "year": 2022, "level": "continental", "with_team": "Senegal"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Round of 16", "year": 2022},
+                {"tournament": "2023 AFCON", "result": "Runner-up", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Ecuador",
+            "name": "Sebastian Beccacece",
+            "nationality": "Argentine",
+            "date_of_birth": "1981-01-31",
+            "tenure_start": "2024-05-08",
+            "fifa_ranking_at_appointment": 33,
+            "career_history": [
+                {"team": "Defensa y Justicia", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_mid"},
+                {"team": "Independiente", "role": "Head Coach", "start_year": 2018, "end_year": 2019, "level": "club_mid"},
+                {"team": "Racing Club", "role": "Head Coach", "start_year": 2020, "end_year": 2020, "level": "club_mid"},
+                {"team": "Elche", "role": "Head Coach", "start_year": 2022, "end_year": 2023, "level": "club_lower"},
+                {"team": "Ecuador", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Austria",
+            "name": "Ralf Rangnick",
+            "nationality": "German",
+            "date_of_birth": "1958-06-29",
+            "tenure_start": "2024-04-29",
+            "fifa_ranking_at_appointment": 25,
+            "career_history": [
+                {"team": "Ulm", "role": "Head Coach", "start_year": 1997, "end_year": 1999, "level": "club_lower"},
+                {"team": "Stuttgart", "role": "Head Coach", "start_year": 1999, "end_year": 2001, "level": "club_top"},
+                {"team": "Hannover", "role": "Head Coach", "start_year": 2001, "end_year": 2004, "level": "club_mid"},
+                {"team": "Schalke 04", "role": "Head Coach", "start_year": 2004, "end_year": 2005, "level": "club_top"},
+                {"team": "Hoffenheim", "role": "Head Coach", "start_year": 2006, "end_year": 2011, "level": "club_mid"},
+                {"team": "Schalke 04", "role": "Head Coach", "start_year": 2011, "end_year": 2011, "level": "club_top"},
+                {"team": "RB Leipzig", "role": "Head Coach", "start_year": 2015, "end_year": 2016, "level": "club_mid"},
+                {"team": "RB Leipzig", "role": "Head Coach", "start_year": 2018, "end_year": 2019, "level": "club_top"},
+                {"team": "Manchester United", "role": "Head Coach", "start_year": 2021, "end_year": 2022, "level": "club_top"},
+                {"team": "Austria", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Intertoto Cup", "year": 2000, "level": "cup", "with_team": "Stuttgart"},
+                {"title": "DFB-Pokal", "year": 2011, "level": "cup", "with_team": "Schalke 04"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Round of 16", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Switzerland",
+            "name": "Murat Yakin",
+            "nationality": "Swiss",
+            "date_of_birth": "1974-09-15",
+            "tenure_start": "2021-08-09",
+            "fifa_ranking_at_appointment": 13,
+            "career_history": [
+                {"team": "FC Thun", "role": "Head Coach", "start_year": 2007, "end_year": 2008, "level": "club_lower"},
+                {"team": "FC Basel", "role": "Head Coach", "start_year": 2012, "end_year": 2014, "level": "club_mid"},
+                {"team": "Spartak Moscow", "role": "Head Coach", "start_year": 2014, "end_year": 2015, "level": "club_mid"},
+                {"team": "Grasshopper", "role": "Head Coach", "start_year": 2015, "end_year": 2016, "level": "club_lower"},
+                {"team": "FC Sion", "role": "Head Coach", "start_year": 2016, "end_year": 2017, "level": "club_lower"},
+                {"team": "Schaffhausen", "role": "Head Coach", "start_year": 2019, "end_year": 2021, "level": "club_lower"},
+                {"team": "Switzerland", "role": "Head Coach", "start_year": 2021, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Swiss Super League", "year": 2013, "level": "league", "with_team": "FC Basel"},
+                {"title": "Swiss Cup", "year": 2012, "level": "cup", "with_team": "FC Basel"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Round of 16", "year": 2022},
+                {"tournament": "Euro 2024", "result": "Quarter-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Denmark",
+            "name": "Kasper Hjulmand",
+            "nationality": "Danish",
+            "date_of_birth": "1972-04-09",
+            "tenure_start": "2020-07-01",
+            "fifa_ranking_at_appointment": 16,
+            "career_history": [
+                {"team": "Lyngby BK", "role": "Head Coach", "start_year": 2006, "end_year": 2008, "level": "club_lower"},
+                {"team": "Nordsjælland", "role": "Head Coach", "start_year": 2011, "end_year": 2014, "level": "club_mid"},
+                {"team": "Mainz 05", "role": "Head Coach", "start_year": 2014, "end_year": 2015, "level": "club_mid"},
+                {"team": "Nordsjælland", "role": "Head Coach", "start_year": 2016, "end_year": 2019, "level": "club_mid"},
+                {"team": "Denmark", "role": "Head Coach", "start_year": 2020, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Danish Superliga", "year": 2012, "level": "league", "with_team": "Nordsjælland"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2020", "result": "Semi-finals", "year": 2021},
+                {"tournament": "2022 FIFA World Cup", "result": "Group Stage", "year": 2022},
+                {"tournament": "Euro 2024", "result": "Round of 16", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Australia",
+            "name": "Tony Popovic",
+            "nationality": "Australian",
+            "date_of_birth": "1973-07-04",
+            "tenure_start": "2024-09-23",
+            "fifa_ranking_at_appointment": 24,
+            "career_history": [
+                {"team": "Western Sydney Wanderers", "role": "Head Coach", "start_year": 2012, "end_year": 2017, "level": "club_lower"},
+                {"team": "Karabukspor", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_lower"},
+                {"team": "Perth Glory", "role": "Head Coach", "start_year": 2019, "end_year": 2020, "level": "club_lower"},
+                {"team": "Melbourne Victory", "role": "Head Coach", "start_year": 2022, "end_year": 2024, "level": "club_lower"},
+                {"team": "Australia", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "AFC Champions League", "year": 2014, "level": "continental", "with_team": "Western Sydney Wanderers"},
+                {"title": "A-League Premiers", "year": 2013, "level": "league", "with_team": "Western Sydney Wanderers"}
+            ],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Korea Republic",
+            "name": "Hong Myung-bo",
+            "nationality": "South Korean",
+            "date_of_birth": "1969-02-12",
+            "tenure_start": "2024-07-09",
+            "fifa_ranking_at_appointment": 23,
+            "career_history": [
+                {"team": "South Korea U23", "role": "Head Coach", "start_year": 2013, "end_year": 2014, "level": "youth"},
+                {"team": "South Korea", "role": "Head Coach", "start_year": 2014, "end_year": 2014, "level": "international_senior"},
+                {"team": "Ulsan Hyundai", "role": "Head Coach", "start_year": 2019, "end_year": 2023, "level": "club_mid"},
+                {"team": "South Korea", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "K League 1", "year": 2022, "level": "league", "with_team": "Ulsan Hyundai"},
+                {"title": "AFC Champions League", "year": 2020, "level": "continental", "with_team": "Ulsan Hyundai"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2014 FIFA World Cup", "result": "Group Stage", "year": 2014}
+            ]
+        },
+        {
+            "team_name": "Serbia",
+            "name": "Dragan Stojkovic",
+            "nationality": "Serbian",
+            "date_of_birth": "1965-03-03",
+            "tenure_start": "2021-03-01",
+            "fifa_ranking_at_appointment": 29,
+            "career_history": [
+                {"team": "Nagoya Grampus", "role": "Head Coach", "start_year": 2008, "end_year": 2013, "level": "club_mid"},
+                {"team": "Guangzhou R&F", "role": "Head Coach", "start_year": 2015, "end_year": 2020, "level": "club_mid"},
+                {"team": "Serbia", "role": "Head Coach", "start_year": 2021, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "J1 League", "year": 2010, "level": "league", "with_team": "Nagoya Grampus"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Group Stage", "year": 2022},
+                {"tournament": "Euro 2024", "result": "Group Stage", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Turkey",
+            "name": "Vincenzo Montella",
+            "nationality": "Italian",
+            "date_of_birth": "1974-06-18",
+            "tenure_start": "2023-09-05",
+            "fifa_ranking_at_appointment": 41,
+            "career_history": [
+                {"team": "Catania", "role": "Head Coach", "start_year": 2006, "end_year": 2007, "level": "club_mid"},
+                {"team": "Roma", "role": "Head Coach", "start_year": 2009, "end_year": 2009, "level": "club_top"},
+                {"team": "Fiorentina", "role": "Head Coach", "start_year": 2012, "end_year": 2015, "level": "club_top"},
+                {"team": "Sampdoria", "role": "Head Coach", "start_year": 2015, "end_year": 2016, "level": "club_mid"},
+                {"team": "AC Milan", "role": "Head Coach", "start_year": 2016, "end_year": 2017, "level": "club_top"},
+                {"team": "Sevilla", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_top"},
+                {"team": "Adana Demirspor", "role": "Head Coach", "start_year": 2021, "end_year": 2023, "level": "club_mid"},
+                {"team": "Turkey", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Supercoppa Italiana", "year": 2016, "level": "cup", "with_team": "AC Milan"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Quarter-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Ukraine",
+            "name": "Serhiy Rebrov",
+            "nationality": "Ukrainian",
+            "date_of_birth": "1974-06-03",
+            "tenure_start": "2023-06-07",
+            "fifa_ranking_at_appointment": 24,
+            "career_history": [
+                {"team": "Dynamo Kyiv", "role": "Head Coach", "start_year": 2014, "end_year": 2017, "level": "club_mid"},
+                {"team": "Ferencvaros", "role": "Head Coach", "start_year": 2018, "end_year": 2021, "level": "club_mid"},
+                {"team": "Al Ain", "role": "Head Coach", "start_year": 2021, "end_year": 2023, "level": "club_mid"},
+                {"team": "Ukraine", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Ukrainian Premier League", "year": 2015, "level": "league", "with_team": "Dynamo Kyiv"},
+                {"title": "Ukrainian Premier League", "year": 2016, "level": "league", "with_team": "Dynamo Kyiv"},
+                {"title": "Nemzeti Bajnoksag I", "year": 2019, "level": "league", "with_team": "Ferencvaros"},
+                {"title": "Nemzeti Bajnoksag I", "year": 2020, "level": "league", "with_team": "Ferencvaros"},
+                {"title": "Nemzeti Bajnoksag I", "year": 2021, "level": "league", "with_team": "Ferencvaros"},
+                {"title": "UAE Pro League", "year": 2022, "level": "league", "with_team": "Al Ain"},
+                {"title": "AFC Champions League", "year": 2024, "level": "continental", "with_team": "Al Ain"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2024", "result": "Quarter-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Wales",
+            "name": "Craig Bellamy",
+            "nationality": "Welsh",
+            "date_of_birth": "1979-07-13",
+            "tenure_start": "2024-07-10",
+            "fifa_ranking_at_appointment": 28,
+            "career_history": [
+                {"team": "Anderlecht", "role": "Assistant Coach", "start_year": 2022, "end_year": 2023, "level": "club_top"},
+                {"team": "Burnley", "role": "Assistant Coach", "start_year": 2023, "end_year": 2024, "level": "club_mid"},
+                {"team": "Wales", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Hungary",
+            "name": "Marco Rossi",
+            "nationality": "Italian",
+            "date_of_birth": "1964-09-09",
+            "tenure_start": "2018-06-20",
+            "fifa_ranking_at_appointment": 56,
+            "career_history": [
+                {"team": "Various Italian clubs", "role": "Head Coach", "start_year": 1998, "end_year": 2012, "level": "club_lower"},
+                {"team": "Honved", "role": "Head Coach", "start_year": 2012, "end_year": 2018, "level": "club_lower"},
+                {"team": "Hungary", "role": "Head Coach", "start_year": 2018, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Nemzeti Bajnoksag I", "year": 2017, "level": "league", "with_team": "Honved"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2020", "result": "Group Stage", "year": 2021},
+                {"tournament": "Euro 2024", "result": "Group Stage", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Iran",
+            "name": "Amir Ghalenoei",
+            "nationality": "Iranian",
+            "date_of_birth": "1964-01-07",
+            "tenure_start": "2023-10-01",
+            "fifa_ranking_at_appointment": 21,
+            "career_history": [
+                {"team": "Esteghlal", "role": "Head Coach", "start_year": 1999, "end_year": 2005, "level": "club_mid"},
+                {"team": "Iran", "role": "Head Coach", "start_year": 2005, "end_year": 2007, "level": "international_senior"},
+                {"team": "Sepahan", "role": "Head Coach", "start_year": 2008, "end_year": 2011, "level": "club_mid"},
+                {"team": "Tractor", "role": "Head Coach", "start_year": 2013, "end_year": 2016, "level": "club_mid"},
+                {"team": "Esteghlal", "role": "Head Coach", "start_year": 2016, "end_year": 2018, "level": "club_mid"},
+                {"team": "Sepahan", "role": "Head Coach", "start_year": 2019, "end_year": 2023, "level": "club_mid"},
+                {"team": "Iran", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Persian Gulf Pro League", "year": 2003, "level": "league", "with_team": "Esteghlal"},
+                {"title": "Persian Gulf Pro League", "year": 2010, "level": "league", "with_team": "Sepahan"},
+                {"title": "Persian Gulf Pro League", "year": 2015, "level": "league", "with_team": "Tractor"},
+                {"title": "Persian Gulf Pro League", "year": 2020, "level": "league", "with_team": "Sepahan"},
+                {"title": "AFC Champions League", "year": 2005, "level": "continental", "with_team": "Esteghlal"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2006 FIFA World Cup", "result": "Group Stage", "year": 2006},
+                {"tournament": "2023 AFC Asian Cup", "result": "Semi-finals", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Cameroon",
+            "name": "Marc Brys",
+            "nationality": "Belgian",
+            "date_of_birth": "1962-08-28",
+            "tenure_start": "2024-02-20",
+            "fifa_ranking_at_appointment": 48,
+            "career_history": [
+                {"team": "OHL", "role": "Head Coach", "start_year": 2019, "end_year": 2021, "level": "club_lower"},
+                {"team": "Sint-Truiden", "role": "Head Coach", "start_year": 2021, "end_year": 2023, "level": "club_lower"},
+                {"team": "Cameroon", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Canada",
+            "name": "Jesse Marsch",
+            "nationality": "American",
+            "date_of_birth": "1973-11-08",
+            "tenure_start": "2024-05-13",
+            "fifa_ranking_at_appointment": 49,
+            "career_history": [
+                {"team": "Montreal Impact", "role": "Head Coach", "start_year": 2012, "end_year": 2012, "level": "club_mid"},
+                {"team": "New York Red Bulls", "role": "Head Coach", "start_year": 2015, "end_year": 2018, "level": "club_mid"},
+                {"team": "RB Salzburg", "role": "Head Coach", "start_year": 2019, "end_year": 2021, "level": "club_mid"},
+                {"team": "RB Leipzig", "role": "Head Coach", "start_year": 2021, "end_year": 2022, "level": "club_top"},
+                {"team": "Leeds United", "role": "Head Coach", "start_year": 2022, "end_year": 2023, "level": "club_mid"},
+                {"team": "Canada", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Austrian Bundesliga", "year": 2020, "level": "league", "with_team": "RB Salzburg"},
+                {"title": "Austrian Bundesliga", "year": 2021, "level": "league", "with_team": "RB Salzburg"},
+                {"title": "Austrian Cup", "year": 2020, "level": "cup", "with_team": "RB Salzburg"},
+                {"title": "Austrian Cup", "year": 2021, "level": "cup", "with_team": "RB Salzburg"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Semi-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Nigeria",
+            "name": "Eric Chelle",
+            "nationality": "French-Malian",
+            "date_of_birth": "1977-05-18",
+            "tenure_start": "2025-01-06",
+            "fifa_ranking_at_appointment": 36,
+            "career_history": [
+                {"team": "MC Oran", "role": "Head Coach", "start_year": 2019, "end_year": 2020, "level": "club_lower"},
+                {"team": "Mali", "role": "Head Coach", "start_year": 2022, "end_year": 2024, "level": "international_senior"},
+                {"team": "Nigeria", "role": "Head Coach", "start_year": 2025, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2023 AFCON", "result": "Quarter-finals", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Saudi Arabia",
+            "name": "Roberto Mancini",
+            "nationality": "Italian",
+            "date_of_birth": "1964-11-27",
+            "tenure_start": "2023-08-28",
+            "fifa_ranking_at_appointment": 56,
+            "career_history": [
+                {"team": "Fiorentina", "role": "Head Coach", "start_year": 2001, "end_year": 2002, "level": "club_top"},
+                {"team": "Lazio", "role": "Head Coach", "start_year": 2002, "end_year": 2004, "level": "club_top"},
+                {"team": "Inter Milan", "role": "Head Coach", "start_year": 2004, "end_year": 2008, "level": "club_top"},
+                {"team": "Manchester City", "role": "Head Coach", "start_year": 2009, "end_year": 2013, "level": "club_top"},
+                {"team": "Galatasaray", "role": "Head Coach", "start_year": 2013, "end_year": 2014, "level": "club_top"},
+                {"team": "Inter Milan", "role": "Head Coach", "start_year": 2014, "end_year": 2016, "level": "club_top"},
+                {"team": "Zenit", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_mid"},
+                {"team": "Italy", "role": "Head Coach", "start_year": 2018, "end_year": 2023, "level": "international_senior"},
+                {"team": "Saudi Arabia", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "UEFA European Championship", "year": 2021, "level": "continental", "with_team": "Italy"},
+                {"title": "Premier League", "year": 2012, "level": "league", "with_team": "Manchester City"},
+                {"title": "Serie A", "year": 2006, "level": "league", "with_team": "Inter Milan"},
+                {"title": "Serie A", "year": 2007, "level": "league", "with_team": "Inter Milan"},
+                {"title": "Serie A", "year": 2008, "level": "league", "with_team": "Inter Milan"},
+                {"title": "Coppa Italia", "year": 2005, "level": "cup", "with_team": "Inter Milan"},
+                {"title": "Coppa Italia", "year": 2006, "level": "cup", "with_team": "Inter Milan"},
+                {"title": "FA Cup", "year": 2011, "level": "cup", "with_team": "Manchester City"},
+                {"title": "Coppa Italia", "year": 2004, "level": "cup", "with_team": "Lazio"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2023 AFC Asian Cup", "result": "Round of 16", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Paraguay",
+            "name": "Alfaro Alfredo",
+            "nationality": "Argentine",
+            "date_of_birth": "1962-09-08",
+            "tenure_start": "2024-01-12",
+            "fifa_ranking_at_appointment": 53,
+            "career_history": [
+                {"team": "Quilmes", "role": "Head Coach", "start_year": 2002, "end_year": 2004, "level": "club_lower"},
+                {"team": "San Lorenzo", "role": "Head Coach", "start_year": 2004, "end_year": 2005, "level": "club_mid"},
+                {"team": "Arsenal de Sarandi", "role": "Head Coach", "start_year": 2006, "end_year": 2009, "level": "club_mid"},
+                {"team": "Boca Juniors", "role": "Head Coach", "start_year": 2018, "end_year": 2019, "level": "club_top"},
+                {"team": "Ecuador", "role": "Head Coach", "start_year": 2020, "end_year": 2022, "level": "international_senior"},
+                {"team": "Paraguay", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Argentine Primera Division", "year": 2007, "level": "league", "with_team": "Arsenal de Sarandi"},
+                {"title": "Copa Libertadores", "year": 2018, "level": "continental", "with_team": "Boca Juniors runner-up"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Group Stage", "year": 2022}
+            ]
+        },
+        {
+            "team_name": "Scotland",
+            "name": "Steve Clarke",
+            "nationality": "Scottish",
+            "date_of_birth": "1963-08-29",
+            "tenure_start": "2019-05-20",
+            "fifa_ranking_at_appointment": 44,
+            "career_history": [
+                {"team": "West Bromwich Albion", "role": "Head Coach", "start_year": 2012, "end_year": 2013, "level": "club_mid"},
+                {"team": "Reading", "role": "Head Coach", "start_year": 2014, "end_year": 2015, "level": "club_lower"},
+                {"team": "Kilmarnock", "role": "Head Coach", "start_year": 2017, "end_year": 2019, "level": "club_lower"},
+                {"team": "Scotland", "role": "Head Coach", "start_year": 2019, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "Euro 2020", "result": "Group Stage", "year": 2021},
+                {"tournament": "Euro 2024", "result": "Group Stage", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Egypt",
+            "name": "Hossam Hassan",
+            "nationality": "Egyptian",
+            "date_of_birth": "1966-08-10",
+            "tenure_start": "2023-12-28",
+            "fifa_ranking_at_appointment": 35,
+            "career_history": [
+                {"team": "Various Egyptian clubs", "role": "Head Coach", "start_year": 2008, "end_year": 2023, "level": "club_lower"},
+                {"team": "Egypt", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2023 AFCON", "result": "Round of 16", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Chile",
+            "name": "Ricardo Gareca",
+            "nationality": "Argentine",
+            "date_of_birth": "1958-02-10",
+            "tenure_start": "2024-01-25",
+            "fifa_ranking_at_appointment": 40,
+            "career_history": [
+                {"team": "Talleres de Cordoba", "role": "Head Coach", "start_year": 1996, "end_year": 1999, "level": "club_mid"},
+                {"team": "Velez Sarsfield", "role": "Head Coach", "start_year": 2003, "end_year": 2006, "level": "club_mid"},
+                {"team": "Universitario", "role": "Head Coach", "start_year": 2007, "end_year": 2009, "level": "club_mid"},
+                {"team": "Palmeiras", "role": "Head Coach", "start_year": 2014, "end_year": 2014, "level": "club_top"},
+                {"team": "Peru", "role": "Head Coach", "start_year": 2015, "end_year": 2022, "level": "international_senior"},
+                {"team": "Chile", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Argentine Primera Division", "year": 2005, "level": "league", "with_team": "Velez Sarsfield"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2018 FIFA World Cup", "result": "Group Stage", "year": 2018},
+                {"tournament": "2024 Copa America", "result": "Group Stage", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Venezuela",
+            "name": "Fernando Batista",
+            "nationality": "Argentine",
+            "date_of_birth": "1969-05-16",
+            "tenure_start": "2023-10-12",
+            "fifa_ranking_at_appointment": 56,
+            "career_history": [
+                {"team": "Argentina U20", "role": "Head Coach", "start_year": 2018, "end_year": 2020, "level": "youth"},
+                {"team": "Venezuela", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Quarter-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Bolivia",
+            "name": "Oscar Villegas",
+            "nationality": "Bolivian",
+            "date_of_birth": "1978-03-15",
+            "tenure_start": "2024-04-11",
+            "fifa_ranking_at_appointment": 84,
+            "career_history": [
+                {"team": "Always Ready", "role": "Head Coach", "start_year": 2020, "end_year": 2024, "level": "club_lower"},
+                {"team": "Bolivia", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Bolivian Primera Division", "year": 2020, "level": "league", "with_team": "Always Ready"},
+                {"title": "Bolivian Primera Division", "year": 2022, "level": "league", "with_team": "Always Ready"}
+            ],
+            "recent_tournament_results": []
+        },
+        {
+            "team_name": "Qatar",
+            "name": "Luis Garcia",
+            "nationality": "Spanish",
+            "date_of_birth": "1975-06-24",
+            "tenure_start": "2024-02-12",
+            "fifa_ranking_at_appointment": 40,
+            "career_history": [
+                {"team": "Thailand U23", "role": "Head Coach", "start_year": 2016, "end_year": 2017, "level": "youth"},
+                {"team": "Lekhwiya", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_mid"},
+                {"team": "Beijing Renhe", "role": "Head Coach", "start_year": 2019, "end_year": 2019, "level": "club_lower"},
+                {"team": "Qatar", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2023 AFC Asian Cup", "result": "Winner", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Ghana",
+            "name": "Otto Addo",
+            "nationality": "Ghanaian-German",
+            "date_of_birth": "1975-06-09",
+            "tenure_start": "2023-04-01",
+            "fifa_ranking_at_appointment": 60,
+            "career_history": [
+                {"team": "Borussia Dortmund", "role": "Assistant Coach", "start_year": 2019, "end_year": 2022, "level": "club_top"},
+                {"team": "Ghana", "role": "Head Coach", "start_year": 2022, "end_year": 2022, "level": "international_senior"},
+                {"team": "Ghana", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2022 FIFA World Cup", "result": "Group Stage", "year": 2022},
+                {"tournament": "2023 AFCON", "result": "Group Stage", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Ivory Coast",
+            "name": "Emerse Fae",
+            "nationality": "Ivorian-French",
+            "date_of_birth": "1984-01-24",
+            "tenure_start": "2024-01-16",
+            "fifa_ranking_at_appointment": 50,
+            "career_history": [
+                {"team": "Ivory Coast", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Africa Cup of Nations", "year": 2024, "level": "continental", "with_team": "Ivory Coast"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2024 AFCON", "result": "Winner", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Jamaica",
+            "name": "Steve Hall",
+            "nationality": "Jamaican",
+            "date_of_birth": "1972-04-12",
+            "tenure_start": "2024-07-22",
+            "fifa_ranking_at_appointment": 62,
+            "career_history": [
+                {"team": "Harbour View", "role": "Head Coach", "start_year": 2015, "end_year": 2019, "level": "club_lower"},
+                {"team": "Jamaica", "role": "Assistant Coach", "start_year": 2019, "end_year": 2024, "level": "international_senior"},
+                {"team": "Jamaica", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2023 CONCACAF Gold Cup", "result": "Quarter-finals", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "Honduras",
+            "name": "Reinaldo Rueda",
+            "nationality": "Colombian",
+            "date_of_birth": "1957-04-16",
+            "tenure_start": "2023-03-06",
+            "fifa_ranking_at_appointment": 76,
+            "career_history": [
+                {"team": "Deportivo Cali", "role": "Head Coach", "start_year": 1997, "end_year": 1999, "level": "club_mid"},
+                {"team": "Honduras", "role": "Head Coach", "start_year": 2001, "end_year": 2004, "level": "international_senior"},
+                {"team": "Colombia", "role": "Head Coach", "start_year": 2004, "end_year": 2006, "level": "international_senior"},
+                {"team": "Ecuador", "role": "Head Coach", "start_year": 2007, "end_year": 2010, "level": "international_senior"},
+                {"team": "Atletico Nacional", "role": "Head Coach", "start_year": 2011, "end_year": 2013, "level": "club_mid"},
+                {"team": "Flamengo", "role": "Head Coach", "start_year": 2017, "end_year": 2017, "level": "club_top"},
+                {"team": "Chile", "role": "Head Coach", "start_year": 2018, "end_year": 2020, "level": "international_senior"},
+                {"team": "Colombia", "role": "Head Coach", "start_year": 2021, "end_year": 2022, "level": "international_senior"},
+                {"team": "Honduras", "role": "Head Coach", "start_year": 2023, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Copa Libertadores", "year": 2016, "level": "continental", "with_team": "Atletico Nacional"},
+                {"title": "Liga Colombiana", "year": 2013, "level": "league", "with_team": "Atletico Nacional"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2014 FIFA World Cup", "result": "Group Stage", "year": 2014},
+                {"tournament": "2024 CONCACAF Nations League", "result": "Semi-finals", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Panama",
+            "name": "Thomas Christiansen",
+            "nationality": "Danish-Spanish",
+            "date_of_birth": "1973-03-29",
+            "tenure_start": "2018-08-01",
+            "fifa_ranking_at_appointment": 69,
+            "career_history": [
+                {"team": "AEK Larnaca", "role": "Head Coach", "start_year": 2013, "end_year": 2014, "level": "club_lower"},
+                {"team": "APOEL", "role": "Head Coach", "start_year": 2014, "end_year": 2016, "level": "club_mid"},
+                {"team": "Leeds United", "role": "Head Coach", "start_year": 2017, "end_year": 2018, "level": "club_mid"},
+                {"team": "Panama", "role": "Head Coach", "start_year": 2018, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [
+                {"title": "Cypriot First Division", "year": 2016, "level": "league", "with_team": "APOEL"},
+                {"title": "Cypriot Cup", "year": 2015, "level": "cup", "with_team": "APOEL"}
+            ],
+            "recent_tournament_results": [
+                {"tournament": "2024 Copa America", "result": "Group Stage", "year": 2024},
+                {"tournament": "2023 CONCACAF Gold Cup", "result": "Semi-finals", "year": 2023}
+            ]
+        },
+        {
+            "team_name": "New Zealand",
+            "name": "Darren Bazeley",
+            "nationality": "New Zealander",
+            "date_of_birth": "1972-10-05",
+            "tenure_start": "2024-01-15",
+            "fifa_ranking_at_appointment": 101,
+            "career_history": [
+                {"team": "Wellington Phoenix", "role": "Assistant Coach", "start_year": 2018, "end_year": 2021, "level": "club_lower"},
+                {"team": "New Zealand", "role": "Assistant Coach", "start_year": 2021, "end_year": 2023, "level": "international_senior"},
+                {"team": "New Zealand", "role": "Head Coach", "start_year": 2024, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2024 OFC Nations Cup", "result": "Winner", "year": 2024}
+            ]
+        },
+        {
+            "team_name": "Trinidad and Tobago",
+            "name": "Angus Eve",
+            "nationality": "Trinidadian",
+            "date_of_birth": "1973-09-25",
+            "tenure_start": "2021-02-01",
+            "fifa_ranking_at_appointment": 103,
+            "career_history": [
+                {"team": "W Connection", "role": "Head Coach", "start_year": 2015, "end_year": 2018, "level": "club_lower"},
+                {"team": "Trinidad and Tobago", "role": "Head Coach", "start_year": 2021, "end_year": null, "level": "international_senior"}
+            ],
+            "honours": [],
+            "recent_tournament_results": [
+                {"tournament": "2023 CONCACAF Gold Cup", "result": "Group Stage", "year": 2023}
+            ]
+        }
+    ]
+}
