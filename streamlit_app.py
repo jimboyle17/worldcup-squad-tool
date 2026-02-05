@@ -175,9 +175,14 @@ def _load_power_rankings(cache: ScraperCache) -> Dict[str, float]:
 
     odds_scraper = OddsPortalScraper(cache, delay=3.0)
     try:
-        progress = st.progress(0, text="Scraping odds data...")
+        progress = st.progress(0, text="Launching browser & scraping odds data...")
         all_matches = odds_scraper.scrape_all_competitions()
         progress.progress(0.7, text="Fitting Bradley-Terry model...")
+
+        if not all_matches:
+            progress.empty()
+            st.session_state["power_error"] = "No match data scraped from OddsPortal"
+            return {}
 
         # Get WC team names from session state
         wc_names = None
@@ -188,11 +193,12 @@ def _load_power_rankings(cache: ScraperCache) -> Dict[str, float]:
         power_ratings = {name: pr.rating for name, pr in rankings.items()}
 
         progress.empty()
+        st.session_state.pop("power_error", None)
         st.session_state["power_ratings"] = power_ratings
         return power_ratings
     except Exception as e:
         logger.error(f"Failed to load power rankings: {e}")
-        st.warning(f"Power rankings failed: {e}")
+        st.session_state["power_error"] = str(e)
         return {}
     finally:
         odds_scraper.close()
@@ -442,6 +448,10 @@ def main():
     power_ratings = None
     if load_power:
         power_ratings = _load_power_rankings(cache)
+
+    # Show persistent power ranking error if any
+    if "power_error" in st.session_state:
+        st.sidebar.error(f"Power Rankings error: {st.session_state['power_error']}")
 
     # render selected page
     if page == "Teams":

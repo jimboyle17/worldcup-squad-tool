@@ -82,17 +82,31 @@ class OddsPortalScraper:
         self._playwright = None
 
     def _ensure_browser(self):
-        """Lazily initialize Playwright browser."""
+        """Lazily initialize Playwright browser, auto-installing Chromium if needed."""
         if self._browser is not None:
             return
+        from playwright.sync_api import sync_playwright
+
+        self._playwright = sync_playwright().start()
         try:
-            from playwright.sync_api import sync_playwright
-            self._playwright = sync_playwright().start()
             self._browser = self._playwright.chromium.launch(headless=True)
-            logger.info("Playwright browser launched")
-        except Exception as e:
-            logger.error(f"Failed to launch Playwright browser: {e}")
-            raise
+        except Exception:
+            # Chromium binary not installed — try to install it
+            logger.info("Chromium not found, attempting to install...")
+            import subprocess
+            result = subprocess.run(
+                ["python", "-m", "playwright", "install", "chromium"],
+                capture_output=True, text=True, timeout=120,
+            )
+            logger.info(f"Playwright install stdout: {result.stdout}")
+            if result.returncode != 0:
+                logger.error(f"Playwright install failed: {result.stderr}")
+                raise RuntimeError(
+                    f"Could not install Chromium: {result.stderr[:200]}"
+                )
+            self._browser = self._playwright.chromium.launch(headless=True)
+
+        logger.info("Playwright browser launched")
 
     def close(self):
         """Close browser and Playwright."""
