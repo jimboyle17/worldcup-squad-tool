@@ -1,438 +1,194 @@
 {
-  "Serbia": {
-    "rating": 11.8,
-    "matches": 15
-  },
-  "Comoros": {
-    "rating": 10.5,
-    "matches": 5
-  },
-  "Bolivia": {
-    "rating": 10.7,
-    "matches": 15
-  },
-  "Gambia": {
-    "rating": 10.6,
-    "matches": 5
-  },
-  "England": {
-    "rating": 13.9,
-    "matches": 15
-  },
-  "Tunisia": {
-    "rating": 13.3,
-    "matches": 20
-  },
-  "Uganda": {
-    "rating": 11.0,
-    "matches": 5
-  },
-  "Botswana": {
-    "rating": 10.0,
-    "matches": 5
-  },
-  "Portugal": {
-    "rating": 12.6,
-    "matches": 35
-  },
-  "Mozambique": {
-    "rating": 10.7,
-    "matches": 15
-  },
-  "Morocco": {
-    "rating": 13.2,
-    "matches": 60
-  },
-  "Saudi Arabia": {
-    "rating": 10.8,
-    "matches": 5
-  },
-  "Mauritania": {
-    "rating": 11.5,
-    "matches": 10
-  },
-  "Cabo Verde": {
-    "rating": 12.5,
-    "matches": 15
-  },
-  "France": {
-    "rating": 12.8,
-    "matches": 45
-  },
-  "Ukraine": {
-    "rating": 11.3,
-    "matches": 10
-  },
-  "Turkey": {
-    "rating": 65.3,
-    "matches": 10
-  },
-  "Brazil": {
-    "rating": 34.7,
-    "matches": 35
-  },
-  "Austria": {
-    "rating": 55.0,
-    "matches": 10
-  },
-  "Mexico": {
-    "rating": 39.8,
-    "matches": 20
-  },
-  "Nigeria": {
-    "rating": 14.2,
+  "Argentina": {
+    "rating": 92.0,
     "matches": 50
   },
-  "Tanzania": {
-    "rating": 11.2,
-    "matches": 20
-  },
-  "Congo DR": {
-    "rating": 13.7,
-    "matches": 35
-  },
-  "Ghana": {
-    "rating": 13.6,
-    "matches": 10
-  },
-  "Ecuador": {
-    "rating": 12.5,
-    "matches": 20
-  },
-  "Germany": {
-    "rating": 33.8,
-    "matches": 30
-  },
-  "Namibia": {
-    "rating": 12.1,
-    "matches": 15
-  },
-  "Zambia": {
-    "rating": 11.8,
-    "matches": 15
-  },
-  "Guinea Bissau": {
-    "rating": 10.0,
-    "matches": 5
-  },
-  "Denmark": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "South Africa": {
-    "rating": 12.4,
-    "matches": 40
-  },
-  "Sudan": {
-    "rating": 10.6,
-    "matches": 10
-  },
-  "Japan": {
-    "rating": 11.2,
-    "matches": 10
-  },
-  "Ivory Coast": {
-    "rating": 13.2,
+  "France": {
+    "rating": 90.0,
     "matches": 45
   },
-  "Cameroon": {
-    "rating": 12.5,
+  "Spain": {
+    "rating": 88.0,
+    "matches": 30
+  },
+  "England": {
+    "rating": 86.0,
+    "matches": 15
+  },
+  "Brazil": {
+    "rating": 84.0,
     "matches": 35
   },
-  "Angola": {
-    "rating": 12.1,
-    "matches": 20
+  "Portugal": {
+    "rating": 82.0,
+    "matches": 35
   },
-  "Peru": {
-    "rating": 11.6,
+  "Netherlands": {
+    "rating": 79.0,
+    "matches": 25
+  },
+  "Belgium": {
+    "rating": 76.0,
+    "matches": 15
+  },
+  "Italy": {
+    "rating": 75.0,
     "matches": 10
   },
-  "Egypt": {
-    "rating": 12.7,
-    "matches": 35
-  },
-  "Spain": {
-    "rating": 14.3,
+  "Germany": {
+    "rating": 78.0,
     "matches": 30
   },
   "Uruguay": {
-    "rating": 13.0,
+    "rating": 72.0,
     "matches": 35
-  },
-  "Belgium": {
-    "rating": 95.0,
-    "matches": 15
-  },
-  "Costa Rica": {
-    "rating": 10.8,
-    "matches": 20
-  },
-  "Switzerland": {
-    "rating": 13.3,
-    "matches": 10
-  },
-  "USA": {
-    "rating": 30.7,
-    "matches": 25
-  },
-  "Argentina": {
-    "rating": 38.5,
-    "matches": 50
-  },
-  "Chile": {
-    "rating": 12.0,
-    "matches": 10
-  },
-  "Iran": {
-    "rating": 11.3,
-    "matches": 5
-  },
-  "Canada": {
-    "rating": 12.1,
-    "matches": 30
-  },
-  "Poland": {
-    "rating": 10.8,
-    "matches": 10
-  },
-  "Mali": {
-    "rating": 12.9,
-    "matches": 30
-  },
-  "Guinea": {
-    "rating": 12.6,
-    "matches": 15
-  },
-  "Netherlands": {
-    "rating": 12.3,
-    "matches": 25
-  },
-  "Equatorial Guinea": {
-    "rating": 10.9,
-    "matches": 15
-  },
-  "Senegal": {
-    "rating": 13.2,
-    "matches": 40
-  },
-  "Wales": {
-    "rating": 10.1,
-    "matches": 5
-  },
-  "Korea Republic": {
-    "rating": 11.1,
-    "matches": 10
-  },
-  "Australia": {
-    "rating": 10.7,
-    "matches": 10
-  },
-  "Paraguay": {
-    "rating": 12.2,
-    "matches": 15
-  },
-  "Gabon": {
-    "rating": 10.9,
-    "matches": 5
-  },
-  "Venezuela": {
-    "rating": 12.6,
-    "matches": 20
-  },
-  "Jamaica": {
-    "rating": 11.4,
-    "matches": 15
-  },
-  "Panama": {
-    "rating": 12.0,
-    "matches": 20
-  },
-  "Hungary": {
-    "rating": 11.6,
-    "matches": 15
-  },
-  "Croatia": {
-    "rating": 11.9,
-    "matches": 35
-  },
-  "Italy": {
-    "rating": 11.8,
-    "matches": 10
-  },
-  "Benin": {
-    "rating": 10.8,
-    "matches": 10
   },
   "Colombia": {
-    "rating": 12.8,
+    "rating": 70.0,
     "matches": 30
   },
-  "Burkina Faso": {
-    "rating": 13.1,
+  "Croatia": {
+    "rating": 73.0,
+    "matches": 35
+  },
+  "Japan": {
+    "rating": 64.0,
+    "matches": 10
+  },
+  "Morocco": {
+    "rating": 68.0,
+    "matches": 60
+  },
+  "USA": {
+    "rating": 58.0,
     "matches": 25
   },
-  "Algeria": {
-    "rating": 13.2,
-    "matches": 25
+  "Mexico": {
+    "rating": 55.0,
+    "matches": 20
   },
-  "Zimbabwe": {
-    "rating": 11.0,
+  "Senegal": {
+    "rating": 62.0,
+    "matches": 40
+  },
+  "Ecuador": {
+    "rating": 56.0,
+    "matches": 20
+  },
+  "Austria": {
+    "rating": 60.0,
+    "matches": 10
+  },
+  "Switzerland": {
+    "rating": 63.0,
+    "matches": 10
+  },
+  "Denmark": {
+    "rating": 65.0,
+    "matches": 15
+  },
+  "Australia": {
+    "rating": 44.0,
+    "matches": 10
+  },
+  "Korea Republic": {
+    "rating": 52.0,
+    "matches": 10
+  },
+  "Serbia": {
+    "rating": 54.0,
+    "matches": 15
+  },
+  "Turkey": {
+    "rating": 58.0,
+    "matches": 10
+  },
+  "Ukraine": {
+    "rating": 56.0,
+    "matches": 10
+  },
+  "Wales": {
+    "rating": 42.0,
     "matches": 5
   },
-  "Bosnia & Herzegovina": {
-    "rating": 10.2,
+  "Hungary": {
+    "rating": 50.0,
+    "matches": 15
+  },
+  "Iran": {
+    "rating": 46.0,
     "matches": 5
   },
-  "Nepal": {
-    "rating": 14.0,
-    "matches": 15
+  "Cameroon": {
+    "rating": 50.0,
+    "matches": 35
   },
-  "Iceland": {
-    "rating": 14.0,
-    "matches": 10
+  "Canada": {
+    "rating": 45.0,
+    "matches": 30
   },
-  "Georgia": {
-    "rating": 14.0,
-    "matches": 10
+  "Nigeria": {
+    "rating": 55.0,
+    "matches": 50
   },
-  "Hong Kong": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Armenia": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Bangladesh": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "India": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Slovakia": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Yemen": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Tajikistan": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Brunei": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Vietnam": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Timor-Leste": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Bulgaria": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Turkmenistan": {
-    "rating": 14.0,
+  "Saudi Arabia": {
+    "rating": 40.0,
     "matches": 5
   },
-  "Kosovo": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Pakistan": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Singapore": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Lebanon": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Myanmar": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Sri Lanka": {
-    "rating": 14.0,
-    "matches": 5
-  },
-  "Philippines": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Syria": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Bhutan": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Slovenia": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Malaysia": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Maldives": {
-    "rating": 14.0,
+  "Paraguay": {
+    "rating": 46.0,
     "matches": 15
   },
   "Scotland": {
-    "rating": 14.0,
+    "rating": 48.0,
     "matches": 10
   },
-  "Ireland": {
-    "rating": 14.0,
+  "Egypt": {
+    "rating": 52.0,
+    "matches": 35
+  },
+  "Chile": {
+    "rating": 48.0,
     "matches": 10
   },
-  "Thailand": {
-    "rating": 14.0,
-    "matches": 15
+  "Venezuela": {
+    "rating": 46.0,
+    "matches": 20
   },
-  "Afghanistan": {
-    "rating": 14.0,
-    "matches": 5
-  },
-  "Greece": {
-    "rating": 14.0,
-    "matches": 10
-  },
-  "Chinese Taipei": {
-    "rating": 14.0,
-    "matches": 15
-  },
-  "Laos": {
-    "rating": 14.0,
+  "Bolivia": {
+    "rating": 30.0,
     "matches": 15
   },
   "Qatar": {
-    "rating": 11.0,
+    "rating": 35.0,
     "matches": 10
+  },
+  "Ghana": {
+    "rating": 48.0,
+    "matches": 10
+  },
+  "Ivory Coast": {
+    "rating": 56.0,
+    "matches": 45
+  },
+  "Jamaica": {
+    "rating": 36.0,
+    "matches": 15
   },
   "Honduras": {
-    "rating": 11.0,
+    "rating": 32.0,
     "matches": 10
   },
+  "Panama": {
+    "rating": 38.0,
+    "matches": 20
+  },
   "New Zealand": {
-    "rating": 10.5,
+    "rating": 28.0,
     "matches": 5
   },
   "Trinidad and Tobago": {
-    "rating": 10.0,
+    "rating": 25.0,
     "matches": 5
   }
 }

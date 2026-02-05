@@ -24,6 +24,8 @@ class MatchOdds:
     home_odds: float
     draw_odds: float
     away_odds: float
+    home_score: Optional[int] = None
+    away_score: Optional[int] = None
 
 
 # Competitions to scrape for WC 2026 power rankings
@@ -144,7 +146,16 @@ class OddsPortalScraper:
         if not force_refresh:
             cached = self.cache.get_json(cache_key)
             if cached is not None:
-                return [MatchOdds(**m) for m in cached]
+                # Deduplicate on load (old cache may have pagination duplicates)
+                seen: set = set()
+                deduped: List[MatchOdds] = []
+                for m_dict in cached:
+                    mo = MatchOdds(**m_dict)
+                    key = (mo.home_team, mo.away_team, mo.date)
+                    if key not in seen:
+                        seen.add(key)
+                        deduped.append(mo)
+                return deduped
 
         if comp_key not in COMPETITIONS:
             logger.warning(f"Unknown competition key: {comp_key}")
@@ -166,6 +177,8 @@ class OddsPortalScraper:
                     "home_odds": m.home_odds,
                     "draw_odds": m.draw_odds,
                     "away_odds": m.away_odds,
+                    "home_score": m.home_score,
+                    "away_score": m.away_score,
                 }
                 for m in matches
             ])
@@ -173,8 +186,13 @@ class OddsPortalScraper:
         return matches
 
     def _scrape_results_page(self, url: str, comp_key: str) -> List[MatchOdds]:
-        """Scrape a results page and follow pagination."""
+        """Scrape a results page and follow pagination.
+
+        Deduplicates matches using (home_team, away_team, date) as the key,
+        since paginated pages may return overlapping results.
+        """
         matches: List[MatchOdds] = []
+        seen: set = set()
 
         try:
             page = self._browser.new_page()
@@ -189,7 +207,11 @@ class OddsPortalScraper:
 
             # Parse matches from the current page
             page_matches = self._parse_results_page(page, comp_key)
-            matches.extend(page_matches)
+            for m in page_matches:
+                key = (m.home_team, m.away_team, m.date)
+                if key not in seen:
+                    seen.add(key)
+                    matches.append(m)
 
             # Handle pagination — try page 2-5
             page_num = 2
@@ -202,7 +224,17 @@ class OddsPortalScraper:
                     new_matches = self._parse_results_page(page, comp_key)
                     if not new_matches:
                         break
-                    matches.extend(new_matches)
+                    added = 0
+                    for m in new_matches:
+                        key = (m.home_team, m.away_team, m.date)
+                        if key not in seen:
+                            seen.add(key)
+                            matches.append(m)
+                            added += 1
+                    if added == 0:
+                        # All matches on this page were duplicates — stop paginating
+                        logger.info(f"Page {page_num} returned only duplicates, stopping")
+                        break
                     page_num += 1
                 except Exception:
                     break
@@ -211,6 +243,7 @@ class OddsPortalScraper:
         except Exception as e:
             logger.error(f"Failed to scrape {url}: {e}")
 
+        logger.info(f"Scraped {len(matches)} unique matches from {comp_key}")
         return matches
 
     def _parse_results_page(self, page, comp_key: str) -> List[MatchOdds]:
@@ -263,6 +296,11 @@ class OddsPortalScraper:
                 home_name = names[0].inner_text().strip()
                 away_name = names[1].inner_text().strip()
 
+                # Extract score from text (e.g. "2:1", "0:0")
+                score_match = re.search(r'(\d+)\s*:\s*(\d+)', text)
+                home_score = int(score_match.group(1)) if score_match else None
+                away_score = int(score_match.group(2)) if score_match else None
+
                 # Extract American odds from text using regex
                 odds_matches = re.findall(r'[+-]\d+', text)
                 if len(odds_matches) < 3:
@@ -283,6 +321,8 @@ class OddsPortalScraper:
                     home_odds=home_dec,
                     draw_odds=draw_dec,
                     away_odds=away_dec,
+                    home_score=home_score,
+                    away_score=away_score,
                 ))
 
         except Exception as e:

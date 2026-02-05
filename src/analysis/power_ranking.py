@@ -1,10 +1,14 @@
-"""Bradley-Terry power ranking model from betting odds.
+"""Power ranking model combining betting odds with actual match results.
 
 Pipeline:
 1. Convert decimal odds to implied probabilities (remove bookmaker margin)
-2. Adjust for home advantage to get neutral-venue strengths
-3. Fit Bradley-Terry model via iterative maximum likelihood
-4. Map fitted parameters to 0-100 power ratings
+2. Extract actual match outcomes from scores (W/D/L)
+3. Combine odds + results into effective observations per match
+4. Fit regularized Bradley-Terry model via iterative maximum likelihood
+5. Map fitted parameters to 0-100 power ratings
+
+The model uses Bayesian regularization (prior toward average strength)
+to prevent divergence for teams with few connections in the match graph.
 """
 
 import math
@@ -27,6 +31,9 @@ COMPETITION_WEIGHTS: Dict[str, float] = {
 }
 
 HOME_ADVANTAGE_PROB = 0.07  # ~7% home advantage in international football
+
+# How much weight to give actual results vs odds (0=pure odds, 1=pure results)
+RESULT_WEIGHT = 0.6
 
 
 @dataclass
@@ -73,6 +80,21 @@ def adjust_for_home_advantage(
     return neutral_home / total_decisive, neutral_away / total_decisive
 
 
+def _score_to_result(home_score: Optional[int], away_score: Optional[int]) -> Optional[float]:
+    """Convert a match score to a result for the home team.
+
+    Returns 1.0 for home win, 0.0 for away win, 0.5 for draw.
+    Returns None if scores are not available.
+    """
+    if home_score is None or away_score is None:
+        return None
+    if home_score > away_score:
+        return 1.0
+    elif home_score < away_score:
+        return 0.0
+    return 0.5
+
+
 def _find_connected_component(
     teams: Set[str], matchups: Dict[str, Set[str]]
 ) -> Set[str]:
@@ -104,13 +126,23 @@ def _find_connected_component(
 
 def fit_bradley_terry(
     matches: List[Dict],
-    max_iterations: int = 100,
-    tolerance: float = 1e-6,
+    max_iterations: int = 500,
+    tolerance: float = 1e-4,
+    prior_strength: float = 2.0,
+    damping: float = 0.5,
 ) -> Dict[str, float]:
-    """Fit a Bradley-Terry model to pairwise match data.
+    """Fit a regularized Bradley-Terry model to pairwise match data.
 
-    Each match dict should have: team_a, team_b, prob_a (win probability for team_a),
-    and weight (competition importance).
+    Each match dict should have:
+        team_a, team_b: team names
+        prob_a: effective win probability for team_a (combining odds + result)
+        weight: competition importance weight
+
+    The prior_strength parameter adds pseudo-observations at 50/50 against
+    an average opponent, preventing divergence for thinly-connected teams.
+
+    The damping parameter (0-1) blends old and new lambda values each
+    iteration to improve convergence stability.
 
     Returns dict mapping team name to lambda parameter.
     """
@@ -134,21 +166,25 @@ def fit_bradley_terry(
     # Initialize lambda parameters
     lam: Dict[str, float] = {t: 1.0 for t in connected}
 
-    # Iterative maximum likelihood estimation
+    # Pre-compute per-team match lists for efficiency
+    team_matches: Dict[str, List[Dict]] = defaultdict(list)
+    for m in matches:
+        if m["team_a"] in connected and m["team_b"] in connected:
+            team_matches[m["team_a"]].append(m)
+            team_matches[m["team_b"]].append(m)
+
+    # Iterative maximum likelihood estimation with regularization
+    prev_lam = dict(lam)
     for iteration in range(max_iterations):
         new_lam: Dict[str, float] = {}
-        max_change = 0.0
 
         for team in connected:
-            numerator = 0.0
-            denominator = 0.0
+            # Numerator: sum of (effective wins * weight) + prior
+            # Denominator: sum of (weight * opponent_lam / (team_lam + opponent_lam)) + prior
+            numerator = prior_strength * 0.5  # Prior: 50% wins
+            denominator = prior_strength * 0.5  # Prior: against average (lam=1)
 
-            for m in matches:
-                if m["team_a"] != team and m["team_b"] != team:
-                    continue
-                if m["team_a"] not in connected or m["team_b"] not in connected:
-                    continue
-
+            for m in team_matches[team]:
                 weight = m.get("weight", 1.0)
 
                 if m["team_a"] == team:
@@ -162,22 +198,33 @@ def fit_bradley_terry(
                 denominator += weight * lam[opponent] / (lam[team] + lam[opponent])
 
             if denominator > 0:
-                new_lam[team] = numerator / denominator
+                raw = numerator / denominator
+                # Damped update: blend old and new to improve convergence
+                new_lam[team] = damping * raw + (1 - damping) * lam[team]
             else:
                 new_lam[team] = lam[team]
 
-            change = abs(new_lam[team] - lam[team])
-            if change > max_change:
-                max_change = change
-
-        # Normalize so geometric mean = 1
+        # Normalize so geometric mean = 1 (prevents parameter drift)
         log_mean = sum(math.log(max(v, 1e-10)) for v in new_lam.values()) / len(new_lam)
         norm_factor = math.exp(log_mean)
-        lam = {t: v / norm_factor for t, v in new_lam.items()}
+        if norm_factor > 0:
+            lam = {t: v / norm_factor for t, v in new_lam.items()}
+        else:
+            lam = new_lam
+
+        # Measure convergence AFTER normalization to avoid residual oscillation
+        max_change = max(
+            abs(lam[t] - prev_lam[t]) / max(prev_lam[t], 1e-10)
+            for t in connected
+        )
+        prev_lam = dict(lam)
 
         if max_change < tolerance:
             logger.info(f"Bradley-Terry converged after {iteration + 1} iterations")
             break
+    else:
+        logger.warning(f"Bradley-Terry did not converge after {max_iterations} iterations "
+                       f"(max_change={max_change:.4g})")
 
     # Add disconnected teams with default
     for t in disconnected:
@@ -187,7 +234,10 @@ def fit_bradley_terry(
 
 
 def _lambda_to_rating(lam: Dict[str, float]) -> Dict[str, float]:
-    """Convert Bradley-Terry lambda parameters to 0-100 ratings."""
+    """Convert Bradley-Terry lambda parameters to 0-100 ratings.
+
+    Uses log-transform and maps to 10-95 range.
+    """
     if not lam:
         return {}
 
@@ -215,7 +265,14 @@ def compute_power_rankings(
     match_odds_list: List,  # List of MatchOdds from oddsportal scraper
     wc_team_names: Optional[Set[str]] = None,
 ) -> Dict[str, PowerRanking]:
-    """Full pipeline: odds → probabilities → Bradley-Terry → power rankings.
+    """Full pipeline: odds + results -> probabilities -> Bradley-Terry -> power rankings.
+
+    For each match, the effective observation is a blend of:
+    - Actual result (W=1, D=0.5, L=0) when score is available
+    - Odds-implied win probability (always available)
+
+    This gives richer signal than either source alone: odds capture pre-match
+    market assessment, while results capture what actually happened on the pitch.
 
     Args:
         match_odds_list: List of MatchOdds dataclass instances
@@ -224,28 +281,47 @@ def compute_power_rankings(
     Returns:
         Dict mapping team name to PowerRanking
     """
-    # Step 1: Convert odds to pairwise match data
+    # Step 1: Convert odds + results to pairwise match data
     bt_matches: List[Dict] = []
     team_match_counts: Dict[str, int] = defaultdict(int)
+    matches_with_results = 0
 
     for match in match_odds_list:
         if match.home_odds <= 1.0 or match.draw_odds <= 1.0 or match.away_odds <= 1.0:
             continue
 
-        # Odds → probabilities
+        # Odds -> probabilities
         home_prob, draw_prob, away_prob = decimal_odds_to_implied_probs(
             match.home_odds, match.draw_odds, match.away_odds
         )
 
-        # Remove home advantage → neutral-venue 2-way
-        prob_a, prob_b = adjust_for_home_advantage(home_prob, away_prob, draw_prob)
+        # Remove home advantage -> neutral-venue 2-way
+        odds_prob_a, odds_prob_b = adjust_for_home_advantage(home_prob, away_prob, draw_prob)
+
+        # Get actual result if scores are available
+        home_score = getattr(match, 'home_score', None)
+        away_score = getattr(match, 'away_score', None)
+        result_a = _score_to_result(home_score, away_score)
+
+        # Combine odds and result into effective probability
+        if result_a is not None:
+            # Blend actual result with odds-implied probability
+            # Result gets RESULT_WEIGHT, odds get (1 - RESULT_WEIGHT)
+            effective_prob_a = RESULT_WEIGHT * result_a + (1 - RESULT_WEIGHT) * odds_prob_a
+            matches_with_results += 1
+        else:
+            # No result available — use odds only
+            effective_prob_a = odds_prob_a
+
+        # Clamp to avoid extreme values (no team has 0% or 100% true strength)
+        effective_prob_a = max(0.05, min(0.95, effective_prob_a))
 
         weight = COMPETITION_WEIGHTS.get(match.competition, 0.9)
 
         bt_matches.append({
             "team_a": match.home_team,
             "team_b": match.away_team,
-            "prob_a": prob_a,
+            "prob_a": effective_prob_a,
             "weight": weight,
         })
 
@@ -256,10 +332,10 @@ def compute_power_rankings(
         logger.warning("No valid matches for Bradley-Terry model")
         return {}
 
-    logger.info(f"Fitting Bradley-Terry model with {len(bt_matches)} matches, "
-                f"{len(team_match_counts)} teams")
+    logger.info(f"Fitting Bradley-Terry model with {len(bt_matches)} matches "
+                f"({matches_with_results} with results), {len(team_match_counts)} teams")
 
-    # Step 2: Fit Bradley-Terry
+    # Step 2: Fit regularized Bradley-Terry
     lam = fit_bradley_terry(bt_matches)
 
     # Step 3: Convert to ratings
