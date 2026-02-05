@@ -168,40 +168,56 @@ def _load_player_games(teams: List[Team], tm_scraper, force_refresh: bool = Fals
     st.session_state["player_games_loaded"] = True
 
 
+def _load_power_rankings_from_file() -> Dict[str, float]:
+    """Load pre-computed power rankings from JSON file."""
+    path = BASE_DIR / "data" / "power_rankings.json"
+    if not path.exists():
+        return {}
+    data = _load_json(str(path))
+    return {name: info["rating"] for name, info in data.items()}
+
+
 def _load_power_rankings(cache: ScraperCache) -> Dict[str, float]:
-    """Load power rankings from OddsPortal via Bradley-Terry model (cached)."""
+    """Load power rankings — try live scrape first, fall back to pre-computed file."""
     if "power_ratings" in st.session_state:
         return st.session_state["power_ratings"]
 
+    # Try live scrape from OddsPortal
     odds_scraper = OddsPortalScraper(cache, delay=3.0)
     try:
         progress = st.progress(0, text="Launching browser & scraping odds data...")
         all_matches = odds_scraper.scrape_all_competitions()
         progress.progress(0.7, text="Fitting Bradley-Terry model...")
 
-        if not all_matches:
+        if all_matches:
+            wc_names = None
+            if "teams" in st.session_state:
+                wc_names = {t.name for t in st.session_state["teams"]}
+
+            rankings = compute_power_rankings(all_matches, wc_names)
+            power_ratings = {name: pr.rating for name, pr in rankings.items()}
+
             progress.empty()
-            st.session_state["power_error"] = "No match data scraped from OddsPortal"
-            return {}
-
-        # Get WC team names from session state
-        wc_names = None
-        if "teams" in st.session_state:
-            wc_names = {t.name for t in st.session_state["teams"]}
-
-        rankings = compute_power_rankings(all_matches, wc_names)
-        power_ratings = {name: pr.rating for name, pr in rankings.items()}
+            st.session_state.pop("power_error", None)
+            st.session_state["power_ratings"] = power_ratings
+            return power_ratings
 
         progress.empty()
+    except Exception as e:
+        logger.error(f"Live power rankings scrape failed: {e}")
+    finally:
+        odds_scraper.close()
+
+    # Fall back to pre-computed JSON file
+    power_ratings = _load_power_rankings_from_file()
+    if power_ratings:
+        logger.info(f"Loaded {len(power_ratings)} power ratings from file")
         st.session_state.pop("power_error", None)
         st.session_state["power_ratings"] = power_ratings
         return power_ratings
-    except Exception as e:
-        logger.error(f"Failed to load power rankings: {e}")
-        st.session_state["power_error"] = str(e)
-        return {}
-    finally:
-        odds_scraper.close()
+
+    st.session_state["power_error"] = "No live data and no pre-computed file found"
+    return {}
 
 
 def _compute_assessments(teams: List[Team]) -> Dict[str, ManagerAssessment]:
