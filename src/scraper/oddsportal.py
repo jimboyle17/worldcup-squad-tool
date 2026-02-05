@@ -40,9 +40,9 @@ COMPETITIONS = {
 # Normalize OddsPortal team names to canonical names
 TEAM_NAME_MAP: Dict[str, str] = {
     "South Korea": "Korea Republic",
-    "USA": "United States",
-    "Ivory Coast": "Cote d'Ivoire",
-    "Iran": "IR Iran",
+    "United States": "USA",
+    "Cote d'Ivoire": "Ivory Coast",
+    "IR Iran": "Iran",
     "Czech Republic": "Czechia",
     "Turkiye": "Turkey",
     "DR Congo": "Congo DR",

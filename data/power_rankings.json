@@ -131,7 +131,7 @@
     "rating": 11.2,
     "matches": 10
   },
-  "Cote d'Ivoire": {
+  "Ivory Coast": {
     "rating": 13.2,
     "matches": 45
   },
@@ -171,7 +171,7 @@
     "rating": 13.3,
     "matches": 10
   },
-  "United States": {
+  "USA": {
     "rating": 30.7,
     "matches": 25
   },
@@ -183,7 +183,7 @@
     "rating": 12.0,
     "matches": 10
   },
-  "IR Iran": {
+  "Iran": {
     "rating": 11.3,
     "matches": 5
   },
@@ -418,5 +418,21 @@
   "Laos": {
     "rating": 14.0,
     "matches": 15
+  },
+  "Qatar": {
+    "rating": 11.0,
+    "matches": 10
+  },
+  "Honduras": {
+    "rating": 11.0,
+    "matches": 10
+  },
+  "New Zealand": {
+    "rating": 10.5,
+    "matches": 5
+  },
+  "Trinidad and Tobago": {
+    "rating": 10.0,
+    "matches": 5
   }
 }
