@@ -79,5 +79,15 @@ class Squad:
     def least_experienced(self) -> Optional[Player]:
         return min(self.players, key=lambda p: p.appearances) if self.players else None
 
+    def best_xi_value(self) -> float:
+        """Sum of market values for top 11 players by value."""
+        sorted_players = sorted(self.players, key=lambda p: p.market_value, reverse=True)
+        return sum(p.market_value for p in sorted_players[:11])
+
+    def best_xviii_value(self) -> float:
+        """Sum of market values for top 18 players by value."""
+        sorted_players = sorted(self.players, key=lambda p: p.market_value, reverse=True)
+        return sum(p.market_value for p in sorted_players[:18])
+
     def players_by_position(self, position: str) -> List[Player]:
         return [p for p in self.players if p.position == position]

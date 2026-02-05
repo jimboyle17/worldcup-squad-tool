@@ -14,6 +14,8 @@ class Player:
     goals: int = 0
     assists: int = 0
     transfermarkt_id: str = ""
+    games_last_30: int = 0
+    games_last_60: int = 0
 
     @property
     def market_value_display(self) -> str:
@@ -37,4 +39,6 @@ class Player:
             "Market Value": self.market_value_display,
             "Caps": self.appearances,
             "Goals": self.goals,
+            "Last 30d": self.games_last_30,
+            "Last 60d": self.games_last_60,
         }

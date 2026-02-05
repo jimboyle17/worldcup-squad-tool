@@ -2,7 +2,8 @@ import json
 import logging
 import re
 import time
-from typing import List, Optional
+from datetime import datetime, timedelta
+from typing import Dict, List, Optional, Tuple
 
 import requests
 from bs4 import BeautifulSoup
@@ -258,6 +259,83 @@ class TransfermarktScraper:
         except Exception as e:
             logger.warning(f"Failed to parse player row: {e}")
             return None
+
+    def scrape_player_recent_games(self, player_id: str, force_refresh: bool = False) -> Tuple[int, int]:
+        """Scrape a player's performance page to count games in last 30 and 60 days.
+
+        Uses the detailed match log (leistungsdaten/plus/1) which lists every
+        individual match with dates, covering all club and national team games.
+
+        Returns (games_last_30, games_last_60).
+        """
+        if not player_id:
+            return 0, 0
+
+        cache_key = f"player_games_{player_id}"
+        if not force_refresh:
+            cached = self.cache.get_json(cache_key)
+            if cached is not None:
+                return cached.get("last_30", 0), cached.get("last_60", 0)
+
+        url = f"{self.BASE_URL}/-/leistungsdaten/spieler/{player_id}/plus/1"
+        logger.info(f"Scraping recent games for player {player_id}")
+
+        html = self._fetch_page(url)
+        if html is None:
+            return 0, 0
+
+        games_30, games_60 = self._parse_recent_games(html)
+        self.cache.set_json(cache_key, {"last_30": games_30, "last_60": games_60})
+        return games_30, games_60
+
+    @staticmethod
+    def _parse_recent_games(html: str) -> Tuple[int, int]:
+        """Parse detailed match log page to count matches within 30 and 60 days.
+
+        The page has a summary table (class="items") followed by multiple
+        individual match tables (no class) per competition.  Each match row
+        has the date in td[1] as DD/MM/YYYY.
+        """
+        soup = BeautifulSoup(html, "lxml")
+        now = datetime.now()
+        cutoff_30 = now - timedelta(days=30)
+        cutoff_60 = now - timedelta(days=60)
+
+        games_30 = 0
+        games_60 = 0
+
+        # Individual match tables have NO CSS class (skip table.items which is the summary)
+        for table in soup.find_all("table"):
+            if table.get("class"):
+                continue  # Skip summary table (class="items") and others
+            tbody = table.find("tbody")
+            if not tbody:
+                continue
+            for row in tbody.find_all("tr"):
+                tds = row.find_all("td")
+                if len(tds) < 3:
+                    continue
+                # Date is in td[1] with class "zentriert", format DD/MM/YYYY
+                date_td = tds[1] if len(tds) > 1 else None
+                if date_td is None:
+                    continue
+                text = date_td.get_text(strip=True)
+                match_date = None
+                for fmt in ("%d/%m/%Y", "%m/%d/%Y", "%d.%m.%Y"):
+                    try:
+                        match_date = datetime.strptime(text, fmt)
+                        break
+                    except ValueError:
+                        continue
+                if match_date is None:
+                    continue
+                if match_date >= cutoff_30:
+                    games_30 += 1
+                    games_60 += 1
+                elif match_date >= cutoff_60:
+                    games_60 += 1
+
+        return games_30, games_60
 
     def scrape_team(self, team_meta: dict, force_refresh: bool = False) -> Team:
         """Scrape and build a full Team object."""

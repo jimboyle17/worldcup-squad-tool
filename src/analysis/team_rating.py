@@ -1,15 +1,17 @@
 """Overall team rating combining squad metrics with manager multiplier.
 
-Base rating (0-100) = FIFA ranking (40%) + market value (35%)
-                     + average caps (15%) + squad balance (10%).
+Base rating (0-100) = market value (50%) + average caps (30%)
+                     + squad balance (20%).
 
-Overall rating = base rating * manager multiplier (0.85 – 1.15).
+Overall rating = base rating * manager multiplier (0.85 – 1.15)
+               * home advantage multiplier (if applicable).
 """
 
 from typing import List, Optional
 
 from ..models.squad import Squad
 from ..models.team import Team
+from .home_advantage import HomeAdvantageConfig, calculate_home_advantage_multiplier
 from .manager_assessment import ManagerAssessment
 
 
@@ -71,25 +73,32 @@ def _balance_score(squad: Squad) -> float:
     return max(0, min(100, 100 - penalty))
 
 
-def calculate_base_team_rating(team: Team, all_teams: List[Team]) -> float:
-    """Compute the base team rating (0-100) from squad and ranking data.
+def calculate_base_team_rating(team: Team, all_teams: List[Team], power_rating: Optional[float] = None) -> float:
+    """Compute the base team rating (0-100) from squad data.
 
-    Weights: FIFA ranking 40%, market value 35%, avg caps 15%, balance 10%.
+    Without power ranking: value 50%, caps 30%, balance 20%.
+    With power ranking:    value 35%, caps 20%, balance 15%, power 30%.
     """
     squad = Squad(team.squad)
     all_values = [t.total_market_value for t in all_teams]
 
-    r_score = _ranking_score(team.fifa_ranking, len(all_teams))
     v_score = _value_score(team.total_market_value, all_values)
     c_score = _caps_score(squad.average_caps())
     b_score = _balance_score(squad)
 
-    base = (
-        r_score * 0.40
-        + v_score * 0.35
-        + c_score * 0.15
-        + b_score * 0.10
-    )
+    if power_rating is not None:
+        base = (
+            v_score * 0.35
+            + c_score * 0.20
+            + b_score * 0.15
+            + power_rating * 0.30
+        )
+    else:
+        base = (
+            v_score * 0.50
+            + c_score * 0.30
+            + b_score * 0.20
+        )
     return round(max(0, min(100, base)), 1)
 
 
@@ -97,9 +106,12 @@ def calculate_overall_rating(
     team: Team,
     all_teams: List[Team],
     assessment: Optional[ManagerAssessment] = None,
+    home_config: Optional[HomeAdvantageConfig] = None,
+    power_rating: Optional[float] = None,
 ) -> float:
-    """Overall rating = base rating * manager multiplier."""
-    base = calculate_base_team_rating(team, all_teams)
+    """Overall rating = base rating * manager multiplier * home advantage."""
+    base = calculate_base_team_rating(team, all_teams, power_rating)
     if assessment:
-        return round(min(100, base * assessment.rating_multiplier), 1)
-    return base
+        base *= assessment.rating_multiplier
+    base *= calculate_home_advantage_multiplier(team.name, base, home_config)
+    return round(min(100, base), 1)

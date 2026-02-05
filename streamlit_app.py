@@ -9,16 +9,20 @@ import pandas as pd
 import streamlit as st
 
 from src.analysis.composition import compare_teams, squad_summary
+from src.analysis.home_advantage import HomeAdvantageConfig, home_advantage_info
 from src.analysis.manager_assessment import ManagerAssessment
 from src.analysis.stats import (
     comparison_dataframe,
     managers_dataframe,
     players_dataframe,
 )
-from src.analysis.team_rating import calculate_overall_rating
+from src.analysis.team_rating import calculate_base_team_rating, calculate_overall_rating
 from src.models.manager import Manager
+from src.models.squad import Squad
 from src.models.team import Team
+from src.analysis.power_ranking import compute_power_rankings
 from src.scraper.cache import ScraperCache
+from src.scraper.oddsportal import OddsPortalScraper
 from src.scraper.transfermarkt import TransfermarktScraper
 from src.scraper.wikipedia import WikipediaScraper
 
@@ -137,6 +141,63 @@ def _load_all_teams(tm_scraper, wiki_scraper) -> List[Team]:
     return teams
 
 
+def _load_player_games(teams: List[Team], tm_scraper, force_refresh: bool = False):
+    """Load recent game counts for all players (opt-in, slow first load)."""
+    if not force_refresh and "player_games_loaded" in st.session_state:
+        return
+
+    all_players = [(t, p) for t in teams for p in t.squad if p.transfermarkt_id]
+    total = len(all_players)
+    if total == 0:
+        st.session_state["player_games_loaded"] = True
+        return
+
+    progress = st.progress(0, text="Player games... 0/{0}".format(total))
+    for i, (team, player) in enumerate(all_players):
+        try:
+            g30, g60 = tm_scraper.scrape_player_recent_games(
+                player.transfermarkt_id, force_refresh=force_refresh,
+            )
+            player.games_last_30 = g30
+            player.games_last_60 = g60
+        except Exception as e:
+            logger.error(f"Failed to load games for {player.name}: {e}")
+        progress.progress((i + 1) / total, text=f"Player games... {i + 1}/{total}")
+
+    progress.empty()
+    st.session_state["player_games_loaded"] = True
+
+
+def _load_power_rankings(cache: ScraperCache) -> Dict[str, float]:
+    """Load power rankings from OddsPortal via Bradley-Terry model (cached)."""
+    if "power_ratings" in st.session_state:
+        return st.session_state["power_ratings"]
+
+    odds_scraper = OddsPortalScraper(cache, delay=3.0)
+    try:
+        progress = st.progress(0, text="Scraping odds data...")
+        all_matches = odds_scraper.scrape_all_competitions()
+        progress.progress(0.7, text="Fitting Bradley-Terry model...")
+
+        # Get WC team names from session state
+        wc_names = None
+        if "teams" in st.session_state:
+            wc_names = {t.name for t in st.session_state["teams"]}
+
+        rankings = compute_power_rankings(all_matches, wc_names)
+        power_ratings = {name: pr.rating for name, pr in rankings.items()}
+
+        progress.empty()
+        st.session_state["power_ratings"] = power_ratings
+        return power_ratings
+    except Exception as e:
+        logger.error(f"Failed to load power rankings: {e}")
+        st.warning(f"Power rankings failed: {e}")
+        return {}
+    finally:
+        odds_scraper.close()
+
+
 def _compute_assessments(teams: List[Team]) -> Dict[str, ManagerAssessment]:
     """Compute manager assessments (cached in session_state)."""
     if "assessments" in st.session_state:
@@ -156,21 +217,31 @@ def _compute_assessments(teams: List[Team]) -> Dict[str, ManagerAssessment]:
 # ── page renderers ───────────────────────────────────────────────────────────
 
 
-def _page_teams(teams: List[Team], assessments: Dict[str, ManagerAssessment]):
+def _page_teams(teams: List[Team], assessments: Dict[str, ManagerAssessment],
+                home_config: HomeAdvantageConfig = None,
+                power_ratings: Dict[str, float] = None):
     st.header("World Cup 2026 Teams")
 
     rows = []
     for t in teams:
         a = assessments.get(t.name)
+        sq = Squad(t.squad)
+        pr = power_ratings.get(t.name) if power_ratings else None
+        base_r = calculate_base_team_rating(t, teams, pr)
+        info = home_advantage_info(t.name, base_r, home_config)
         rows.append({
             "Team": t.name,
             "Confederation": t.confederation,
             "FIFA Ranking": t.fifa_ranking,
             "Squad Size": t.squad_size,
             "Total Value": t.total_value_display,
+            "Best XI Value": _fmt_value(sq.best_xi_value()),
+            "Best XVIII Value": _fmt_value(sq.best_xviii_value()),
             "Avg Age": round(t.average_age, 1),
             "Mgr Score": a.composite_score if a else None,
-            "Overall Rating": calculate_overall_rating(t, teams, a),
+            "Power Rating": round(pr, 1) if pr is not None else None,
+            "Home Boost": info["boost_label"],
+            "Overall Rating": calculate_overall_rating(t, teams, a, home_config, pr),
         })
 
     df = pd.DataFrame(rows)
@@ -250,7 +321,7 @@ def _page_squad_detail(teams: List[Team], assessments: Dict[str, ManagerAssessme
     # ── player table ──
     if players:
         pdf = players_dataframe(players)
-        display_cols = ["Name", "Position", "Detail", "Age", "Club", "Market Value", "Caps", "Goals"]
+        display_cols = ["Name", "Position", "Detail", "Age", "Club", "Market Value", "Caps", "Goals", "Last 30d", "Last 60d"]
         available = [c for c in display_cols if c in pdf.columns]
         st.dataframe(pdf[available], use_container_width=True, hide_index=True)
         st.caption(f"{len(players)} players shown")
@@ -286,7 +357,9 @@ def _page_managers(teams: List[Team], assessments: Dict[str, ManagerAssessment])
     )
 
 
-def _page_compare(teams: List[Team], assessments: Dict[str, ManagerAssessment]):
+def _page_compare(teams: List[Team], assessments: Dict[str, ManagerAssessment],
+                  home_config: HomeAdvantageConfig = None,
+                  power_ratings: Dict[str, float] = None):
     st.header("Compare Teams")
 
     team_names = [t.name for t in teams]
@@ -304,7 +377,7 @@ def _page_compare(teams: List[Team], assessments: Dict[str, ManagerAssessment]):
     assessment_a = assessments.get(name_a)
     assessment_b = assessments.get(name_b)
 
-    rows = compare_teams(team_a, team_b, assessment_a, assessment_b)
+    rows = compare_teams(team_a, team_b, assessment_a, assessment_b, home_config, power_ratings)
     df = comparison_dataframe(rows, name_a, name_b)
     st.dataframe(df, use_container_width=True, hide_index=True)
 
@@ -325,20 +398,48 @@ def main():
     )
     st.session_state["page"] = page
 
+    # sidebar options
+    st.sidebar.divider()
+    st.sidebar.subheader("Options")
+    apply_home = st.sidebar.checkbox("Apply Home Advantage", value=True)
+    home_config = HomeAdvantageConfig(enabled=apply_home)
+
+    load_games = st.sidebar.checkbox("Load Player Games (slow)", value=False)
+    load_power = st.sidebar.checkbox("Load Power Rankings", value=False)
+
+    if st.sidebar.button("Force Refresh All Data"):
+        # Set a persistent flag and clear all caches
+        st.session_state["force_refresh"] = True
+        for key in ["teams", "assessments", "player_games_loaded", "power_ratings"]:
+            st.session_state.pop(key, None)
+        st.rerun()
+
+    # Consume the force_refresh flag (persists across the rerun)
+    force_refresh = st.session_state.pop("force_refresh", False)
+
     # load data (cached after first run)
     cache, tm_scraper, wiki_scraper = _get_scrapers()
     teams = _load_all_teams(tm_scraper, wiki_scraper)
     assessments = _compute_assessments(teams)
 
+    # optional: player recent games
+    if load_games:
+        _load_player_games(teams, tm_scraper, force_refresh=force_refresh)
+
+    # optional: power rankings
+    power_ratings = None
+    if load_power:
+        power_ratings = _load_power_rankings(cache)
+
     # render selected page
     if page == "Teams":
-        _page_teams(teams, assessments)
+        _page_teams(teams, assessments, home_config, power_ratings)
     elif page == "Squad Detail":
         _page_squad_detail(teams, assessments)
     elif page == "Managers":
         _page_managers(teams, assessments)
     elif page == "Compare":
-        _page_compare(teams, assessments)
+        _page_compare(teams, assessments, home_config, power_ratings)
 
 
 if __name__ == "__main__":

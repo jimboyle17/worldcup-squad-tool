@@ -3,6 +3,7 @@ from typing import TYPE_CHECKING, Dict, List, Optional
 from ..models.player import Player
 from ..models.squad import Squad
 from ..models.team import Team
+from .home_advantage import HomeAdvantageConfig, home_advantage_info
 
 if TYPE_CHECKING:
     from .manager_assessment import ManagerAssessment
@@ -48,6 +49,8 @@ def compare_teams(
     team_b: Team,
     assessment_a: Optional["ManagerAssessment"] = None,
     assessment_b: Optional["ManagerAssessment"] = None,
+    home_config: Optional[HomeAdvantageConfig] = None,
+    power_ratings: Optional[Dict[str, float]] = None,
 ) -> List[Dict]:
     """Compare two teams across multiple dimensions. Returns list of comparison rows."""
     sa = Squad(team_a.squad)
@@ -108,12 +111,34 @@ def compare_teams(
         "Value B": assessment_b.rating_impact_pct if assessment_b else "-",
     })
 
-    # Overall rating row (import here to avoid circular)
+    # Power Rating row
+    pr_a = power_ratings.get(team_a.name) if power_ratings else None
+    pr_b = power_ratings.get(team_b.name) if power_ratings else None
+    rows.append({
+        "Metric": "Power Rating",
+        "Value A": round(pr_a, 1) if pr_a is not None else "-",
+        "Value B": round(pr_b, 1) if pr_b is not None else "-",
+    })
+
+    # Home Boost row
+    # Compute base ratings for info display
+    from .team_rating import calculate_base_team_rating
+    base_a = calculate_base_team_rating(team_a, [team_a, team_b], pr_a)
+    base_b = calculate_base_team_rating(team_b, [team_a, team_b], pr_b)
+    info_a = home_advantage_info(team_a.name, base_a, home_config)
+    info_b = home_advantage_info(team_b.name, base_b, home_config)
+    rows.append({
+        "Metric": "Home Boost",
+        "Value A": info_a["boost_label"],
+        "Value B": info_b["boost_label"],
+    })
+
+    # Overall rating row
     from .team_rating import calculate_overall_rating
     rows.append({
         "Metric": "Overall Rating",
-        "Value A": calculate_overall_rating(team_a, [team_a, team_b], assessment_a),
-        "Value B": calculate_overall_rating(team_b, [team_a, team_b], assessment_b),
+        "Value A": calculate_overall_rating(team_a, [team_a, team_b], assessment_a, home_config, pr_a),
+        "Value B": calculate_overall_rating(team_b, [team_a, team_b], assessment_b, home_config, pr_b),
     })
 
     return rows
