@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import Dict, Optional
 
 
-HOST_NATIONS = {"United States", "Canada", "Mexico"}
+HOST_NATIONS = {"United States", "USA", "Canada", "Mexico"}
 
 
 @dataclass
