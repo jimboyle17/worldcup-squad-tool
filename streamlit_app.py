@@ -405,7 +405,19 @@ def main():
     home_config = HomeAdvantageConfig(enabled=apply_home)
 
     load_games = st.sidebar.checkbox("Load Player Games (slow)", value=False)
-    load_power = st.sidebar.checkbox("Load Power Rankings", value=False)
+    # Check if Playwright is available before offering power rankings
+    _playwright_available = False
+    try:
+        import playwright.sync_api
+        _playwright_available = True
+    except ImportError:
+        pass
+
+    if _playwright_available:
+        load_power = st.sidebar.checkbox("Load Power Rankings", value=False)
+    else:
+        load_power = False
+        st.sidebar.caption("Power Rankings unavailable (Playwright not installed)")
 
     if st.sidebar.button("Force Refresh All Data"):
         # Set a persistent flag and clear all caches
