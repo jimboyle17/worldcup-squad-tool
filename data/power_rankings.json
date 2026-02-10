@@ -31,10 +31,6 @@
     "rating": 76.0,
     "matches": 15
   },
-  "Italy": {
-    "rating": 75.0,
-    "matches": 10
-  },
   "Germany": {
     "rating": 78.0,
     "matches": 30
@@ -83,10 +79,6 @@
     "rating": 63.0,
     "matches": 10
   },
-  "Denmark": {
-    "rating": 65.0,
-    "matches": 15
-  },
   "Australia": {
     "rating": 44.0,
     "matches": 10
@@ -95,45 +87,25 @@
     "rating": 52.0,
     "matches": 10
   },
-  "Serbia": {
-    "rating": 54.0,
-    "matches": 15
-  },
-  "Turkey": {
-    "rating": 58.0,
+  "Norway": {
+    "rating": 57.0,
     "matches": 10
-  },
-  "Ukraine": {
-    "rating": 56.0,
-    "matches": 10
-  },
-  "Wales": {
-    "rating": 42.0,
-    "matches": 5
-  },
-  "Hungary": {
-    "rating": 50.0,
-    "matches": 15
   },
   "Iran": {
     "rating": 46.0,
     "matches": 5
   },
-  "Cameroon": {
-    "rating": 50.0,
-    "matches": 35
-  },
   "Canada": {
     "rating": 45.0,
     "matches": 30
   },
-  "Nigeria": {
-    "rating": 55.0,
-    "matches": 50
-  },
   "Saudi Arabia": {
     "rating": 40.0,
     "matches": 5
+  },
+  "Algeria": {
+    "rating": 53.0,
+    "matches": 15
   },
   "Paraguay": {
     "rating": 46.0,
@@ -147,16 +119,8 @@
     "rating": 52.0,
     "matches": 35
   },
-  "Chile": {
-    "rating": 48.0,
-    "matches": 10
-  },
-  "Venezuela": {
-    "rating": 46.0,
-    "matches": 20
-  },
-  "Bolivia": {
-    "rating": 30.0,
+  "Tunisia": {
+    "rating": 50.0,
     "matches": 15
   },
   "Qatar": {
@@ -171,14 +135,6 @@
     "rating": 56.0,
     "matches": 45
   },
-  "Jamaica": {
-    "rating": 36.0,
-    "matches": 15
-  },
-  "Honduras": {
-    "rating": 32.0,
-    "matches": 10
-  },
   "Panama": {
     "rating": 38.0,
     "matches": 20
@@ -187,8 +143,28 @@
     "rating": 28.0,
     "matches": 5
   },
-  "Trinidad and Tobago": {
-    "rating": 25.0,
+  "Uzbekistan": {
+    "rating": 42.0,
+    "matches": 10
+  },
+  "South Africa": {
+    "rating": 44.0,
+    "matches": 10
+  },
+  "Jordan": {
+    "rating": 38.0,
+    "matches": 5
+  },
+  "Cape Verde": {
+    "rating": 36.0,
+    "matches": 5
+  },
+  "Curacao": {
+    "rating": 30.0,
+    "matches": 5
+  },
+  "Haiti": {
+    "rating": 28.0,
     "matches": 5
   }
 }

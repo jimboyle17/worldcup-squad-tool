@@ -76,10 +76,23 @@ def _balance_score(squad: Squad) -> float:
 def calculate_base_team_rating(team: Team, all_teams: List[Team], power_rating: Optional[float] = None) -> float:
     """Compute the base team rating (0-100) from squad data.
 
-    Without power ranking: value 50%, caps 30%, balance 20%.
-    With power ranking:    value 35%, caps 20%, balance 15%, power 30%.
+    When squad data is available:
+        Without power ranking: value 50%, caps 30%, balance 20%.
+        With power ranking:    value 35%, caps 20%, balance 15%, power 30%.
+
+    When squad data is unavailable (empty squad):
+        With power ranking:    power rating used directly.
+        Without power ranking: FIFA ranking used as fallback.
     """
     squad = Squad(team.squad)
+    has_squad = squad.size > 0
+
+    if not has_squad:
+        # No squad data — use power ranking or FIFA ranking as fallback
+        if power_rating is not None:
+            return round(max(0, min(100, power_rating)), 1)
+        return round(_ranking_score(team.fifa_ranking, len(all_teams)), 1)
+
     all_values = [t.total_market_value for t in all_teams]
 
     v_score = _value_score(team.total_market_value, all_values)

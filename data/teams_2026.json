@@ -65,14 +65,6 @@
             "transfermarkt_path": "belgien"
         },
         {
-            "name": "Italy",
-            "country_code": "ITA",
-            "confederation": "UEFA",
-            "fifa_ranking": 9,
-            "transfermarkt_id": "3376",
-            "transfermarkt_path": "italien"
-        },
-        {
             "name": "Germany",
             "country_code": "GER",
             "confederation": "UEFA",
@@ -169,14 +161,6 @@
             "transfermarkt_path": "schweiz"
         },
         {
-            "name": "Denmark",
-            "country_code": "DEN",
-            "confederation": "UEFA",
-            "fifa_ranking": 22,
-            "transfermarkt_id": "3436",
-            "transfermarkt_path": "danemark"
-        },
-        {
             "name": "Australia",
             "country_code": "AUS",
             "confederation": "AFC",
@@ -193,44 +177,12 @@
             "transfermarkt_path": "sudkorea"
         },
         {
-            "name": "Serbia",
-            "country_code": "SRB",
-            "confederation": "UEFA",
-            "fifa_ranking": 25,
-            "transfermarkt_id": "3438",
-            "transfermarkt_path": "serbia"
-        },
-        {
-            "name": "Turkey",
-            "country_code": "TUR",
-            "confederation": "UEFA",
-            "fifa_ranking": 26,
-            "transfermarkt_id": "3381",
-            "transfermarkt_path": "turkei"
-        },
-        {
-            "name": "Ukraine",
-            "country_code": "UKR",
-            "confederation": "UEFA",
-            "fifa_ranking": 27,
-            "transfermarkt_id": "3699",
-            "transfermarkt_path": "ukraine"
-        },
-        {
-            "name": "Wales",
-            "country_code": "WAL",
-            "confederation": "UEFA",
-            "fifa_ranking": 28,
-            "transfermarkt_id": "3864",
-            "transfermarkt_path": "wales"
-        },
-        {
-            "name": "Hungary",
-            "country_code": "HUN",
+            "name": "Norway",
+            "country_code": "NOR",
             "confederation": "UEFA",
             "fifa_ranking": 29,
-            "transfermarkt_id": "3468",
-            "transfermarkt_path": "hungary"
+            "transfermarkt_id": "3440",
+            "transfermarkt_path": "norwegen"
         },
         {
             "name": "Iran",
@@ -241,28 +193,12 @@
             "transfermarkt_path": "iran"
         },
         {
-            "name": "Cameroon",
-            "country_code": "CMR",
-            "confederation": "CAF",
-            "fifa_ranking": 31,
-            "transfermarkt_id": "3434",
-            "transfermarkt_path": "kamerun"
-        },
-        {
             "name": "Canada",
             "country_code": "CAN",
             "confederation": "CONCACAF",
             "fifa_ranking": 32,
             "transfermarkt_id": "3510",
             "transfermarkt_path": "kanada"
-        },
-        {
-            "name": "Nigeria",
-            "country_code": "NGA",
-            "confederation": "CAF",
-            "fifa_ranking": 33,
-            "transfermarkt_id": "3444",
-            "transfermarkt_path": "nigeria"
         },
         {
             "name": "Saudi Arabia",
@@ -273,10 +209,18 @@
             "transfermarkt_path": "saudi-arabien"
         },
         {
+            "name": "Algeria",
+            "country_code": "ALG",
+            "confederation": "CAF",
+            "fifa_ranking": 35,
+            "transfermarkt_id": "3614",
+            "transfermarkt_path": "algerien"
+        },
+        {
             "name": "Paraguay",
             "country_code": "PAR",
             "confederation": "CONMEBOL",
-            "fifa_ranking": 35,
+            "fifa_ranking": 36,
             "transfermarkt_id": "3581",
             "transfermarkt_path": "paraguay"
         },
@@ -284,7 +228,7 @@
             "name": "Scotland",
             "country_code": "SCO",
             "confederation": "UEFA",
-            "fifa_ranking": 36,
+            "fifa_ranking": 37,
             "transfermarkt_id": "3380",
             "transfermarkt_path": "schottland"
         },
@@ -292,33 +236,17 @@
             "name": "Egypt",
             "country_code": "EGY",
             "confederation": "CAF",
-            "fifa_ranking": 37,
+            "fifa_ranking": 38,
             "transfermarkt_id": "3672",
             "transfermarkt_path": "agypten"
         },
         {
-            "name": "Chile",
-            "country_code": "CHI",
-            "confederation": "CONMEBOL",
-            "fifa_ranking": 38,
-            "transfermarkt_id": "3700",
-            "transfermarkt_path": "chile"
-        },
-        {
-            "name": "Venezuela",
-            "country_code": "VEN",
-            "confederation": "CONMEBOL",
-            "fifa_ranking": 39,
-            "transfermarkt_id": "3504",
-            "transfermarkt_path": "venezuela"
-        },
-        {
-            "name": "Bolivia",
-            "country_code": "BOL",
-            "confederation": "CONMEBOL",
+            "name": "Tunisia",
+            "country_code": "TUN",
+            "confederation": "CAF",
             "fifa_ranking": 40,
-            "transfermarkt_id": "5233",
-            "transfermarkt_path": "bolivia"
+            "transfermarkt_id": "3670",
+            "transfermarkt_path": "tunesien"
         },
         {
             "name": "Qatar",
@@ -345,22 +273,6 @@
             "transfermarkt_path": "cote-divoire"
         },
         {
-            "name": "Jamaica",
-            "country_code": "JAM",
-            "confederation": "CONCACAF",
-            "fifa_ranking": 44,
-            "transfermarkt_id": "3671",
-            "transfermarkt_path": "jamaica"
-        },
-        {
-            "name": "Honduras",
-            "country_code": "HON",
-            "confederation": "CONCACAF",
-            "fifa_ranking": 45,
-            "transfermarkt_id": "3590",
-            "transfermarkt_path": "honduras"
-        },
-        {
             "name": "Panama",
             "country_code": "PAN",
             "confederation": "CONCACAF",
@@ -377,12 +289,112 @@
             "transfermarkt_path": "new-zealand"
         },
         {
-            "name": "Trinidad and Tobago",
-            "country_code": "TRI",
+            "name": "Uzbekistan",
+            "country_code": "UZB",
+            "confederation": "AFC",
+            "fifa_ranking": 50,
+            "transfermarkt_id": "3563",
+            "transfermarkt_path": "usbekistan"
+        },
+        {
+            "name": "South Africa",
+            "country_code": "RSA",
+            "confederation": "CAF",
+            "fifa_ranking": 61,
+            "transfermarkt_id": "3806",
+            "transfermarkt_path": "sudafrika"
+        },
+        {
+            "name": "Jordan",
+            "country_code": "JOR",
+            "confederation": "AFC",
+            "fifa_ranking": 66,
+            "transfermarkt_id": "15737",
+            "transfermarkt_path": "jordanien"
+        },
+        {
+            "name": "Cape Verde",
+            "country_code": "CPV",
+            "confederation": "CAF",
+            "fifa_ranking": 68,
+            "transfermarkt_id": "4311",
+            "transfermarkt_path": "kap-verde"
+        },
+        {
+            "name": "Curacao",
+            "country_code": "CUW",
             "confederation": "CONCACAF",
-            "fifa_ranking": 48,
-            "transfermarkt_id": "7149",
-            "transfermarkt_path": "trinidad-and-tobago"
+            "fifa_ranking": 82,
+            "transfermarkt_id": "32364",
+            "transfermarkt_path": "curacao"
+        },
+        {
+            "name": "Haiti",
+            "country_code": "HTI",
+            "confederation": "CONCACAF",
+            "fifa_ranking": 84,
+            "transfermarkt_id": "14161",
+            "transfermarkt_path": "haiti"
+        },
+        {
+            "name": "TBD (UEFA Playoff D)",
+            "country_code": "TBD",
+            "confederation": "UEFA",
+            "fifa_ranking": 90,
+            "transfermarkt_id": "",
+            "transfermarkt_path": "",
+            "playoff": true,
+            "playoff_candidates": ["Denmark", "North Macedonia", "Czechia", "Republic of Ireland"]
+        },
+        {
+            "name": "TBD (UEFA Playoff A)",
+            "country_code": "TBD",
+            "confederation": "UEFA",
+            "fifa_ranking": 90,
+            "transfermarkt_id": "",
+            "transfermarkt_path": "",
+            "playoff": true,
+            "playoff_candidates": ["Italy", "Northern Ireland", "Wales", "Bosnia and Herzegovina"]
+        },
+        {
+            "name": "TBD (UEFA Playoff C)",
+            "country_code": "TBD",
+            "confederation": "UEFA",
+            "fifa_ranking": 90,
+            "transfermarkt_id": "",
+            "transfermarkt_path": "",
+            "playoff": true,
+            "playoff_candidates": ["Slovakia", "Kosovo", "Turkey", "Romania"]
+        },
+        {
+            "name": "TBD (UEFA Playoff B)",
+            "country_code": "TBD",
+            "confederation": "UEFA",
+            "fifa_ranking": 90,
+            "transfermarkt_id": "",
+            "transfermarkt_path": "",
+            "playoff": true,
+            "playoff_candidates": ["Ukraine", "Iceland", "Georgia", "Luxembourg"]
+        },
+        {
+            "name": "TBD (Intercon Playoff 2)",
+            "country_code": "TBD",
+            "confederation": "TBD",
+            "fifa_ranking": 90,
+            "transfermarkt_id": "",
+            "transfermarkt_path": "",
+            "playoff": true,
+            "playoff_candidates": ["Bolivia", "Iraq", "Suriname"]
+        },
+        {
+            "name": "TBD (Intercon Playoff 1)",
+            "country_code": "TBD",
+            "confederation": "TBD",
+            "fifa_ranking": 90,
+            "transfermarkt_id": "",
+            "transfermarkt_path": "",
+            "playoff": true,
+            "playoff_candidates": ["DR Congo", "Jamaica", "New Caledonia"]
         }
     ]
 }

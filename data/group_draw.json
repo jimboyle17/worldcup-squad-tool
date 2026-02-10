@@ -1,0 +1,45 @@
+{
+    "groups": {
+        "A": ["Mexico", "Korea Republic", "South Africa", "TBD (UEFA Playoff D)"],
+        "B": ["Canada", "Switzerland", "Qatar", "TBD (UEFA Playoff A)"],
+        "C": ["Brazil", "Morocco", "Haiti", "Scotland"],
+        "D": ["USA", "Australia", "Paraguay", "TBD (UEFA Playoff C)"],
+        "E": ["Germany", "Ecuador", "Ivory Coast", "Curacao"],
+        "F": ["Netherlands", "Japan", "TBD (UEFA Playoff B)", "Tunisia"],
+        "G": ["Belgium", "Iran", "Egypt", "New Zealand"],
+        "H": ["Spain", "Uruguay", "Saudi Arabia", "Cape Verde"],
+        "I": ["France", "Senegal", "Norway", "TBD (Intercon Playoff 2)"],
+        "J": ["Argentina", "Austria", "Jordan", "Algeria"],
+        "K": ["Portugal", "Colombia", "Uzbekistan", "TBD (Intercon Playoff 1)"],
+        "L": ["England", "Croatia", "Ghana", "Panama"]
+    },
+    "knockout_bracket": {
+        "R32": [
+            ["1A", "2C"],
+            ["1C", "2A"],
+            ["1B", "2D"],
+            ["1D", "2B"],
+            ["1E", "2G"],
+            ["1G", "2E"],
+            ["1F", "2H"],
+            ["1H", "2F"],
+            ["1I", "2K"],
+            ["1K", "2I"],
+            ["1J", "2L"],
+            ["1L", "2J"],
+            ["3A/B/C", "3D/E/F"],
+            ["3G/H/I", "3J/K/L"],
+            ["3A/B/C_2", "3D/E/F_2"],
+            ["3G/H/I_2", "3J/K/L_2"]
+        ]
+    },
+    "format": {
+        "groups": 12,
+        "teams_per_group": 4,
+        "matches_per_team": 3,
+        "advance_top2": 24,
+        "advance_best_3rd": 8,
+        "total_advance": 32,
+        "knockout_rounds": ["R32", "R16", "QF", "SF", "Final"]
+    }
+}
